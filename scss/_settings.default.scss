@@ -119,8 +119,9 @@ $ms13                               : 100 !default;
 // Font settings
 // ---
 
-$alpha-font-family                  : sans-serif !default;
-$beta-font-family                   : serif !default;
+$alpha-font-family                  : "acumin-pro", sans-serif !default;
+//$alpha-font-family                  : sans-serif !default;
+$beta-font-family                   : "bebas-neue", serif !default;
 
 $alpha-font-size                    : $ms0 !default;
 

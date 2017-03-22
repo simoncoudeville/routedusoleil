@@ -11,17 +11,52 @@
  */
 
 .c-logo {
-    float: left;
-    display: block;
-    width: 157px; /* [1] */
-    margin-bottom: 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('../img/svg/logo.svg');
-    text-indent: -99999px; /* [2] */
-    @include text-dimensions($alpha-font-size,1,0,1.25,1.25);
+    display: inline-flex;
+    align-items: center;
+    //flex-direction: column;
+    //width: 100%;
+    margin-bottom: $alpha-leading;
+    letter-spacing: 0.04em;
+    position: relative;
+    //font-family: $delta-font-family;
+    //text-transform: uppercase;
+    //font-weight: bold;
+    @include text-dimensions($ms2,1);
+}
+
+.c-logo--label {
+    display: none;
+
+    @include mq(bp3) {
+        display: inline-flex;
+    }
+}
+
+.c-logo--mark {
+    @include mq(bp4) {
+        //position: absolute;
+        //left: 50%;
+        //top: 50%;
+        //transform: translate(-50%,-50%,0);
+    }
 }
 
     .c-logo__link {
         display: block;
+    }
+
+    $mark-ratio:     1.22222;
+    $mark-height:    2.5rem;
+    $mark-width:     $mark-height * $mark-ratio;
+
+    .c-logo__mark {
+        display: block;
+        height: $mark-height;
+        width: $mark-width;
+        background-image: url('../img/png/logo-black.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        //@include margin-bottom($alpha-leading);
+        //@include margin-right($columns-gutter);
     }

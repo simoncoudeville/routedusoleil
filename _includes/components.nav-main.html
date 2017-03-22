@@ -1,16 +1,21 @@
 <nav class="c-nav-main js-nav">
     <ul class="o-list c-nav-main__list">
-        <!-- Manually define homepage link -->
-        <li class="c-nav-main__item{% if page.section == "home" %} is-selected{% endif %}">
-            <a href="{{ site.github.url }}/" class="c-nav-main__link">Home</a>
+        <li class="c-nav-main__item">
+            <a href="{{ site.github.url }}/" class="c-nav-main__link">Projects</a>
         </li>
-
-        <!-- Define your site navigation in _config.yml -->
+        <li class="c-nav-main__item">
+            <a href="{{ site.github.url }}/" class="c-nav-main__link">Contact</a>
+        </li>
+        <li class="c-nav-main__item">
+            <a href="{{ site.github.url }}/" class="c-nav-main__link">About</a>
+        </li>
+        {% comment %}
         {% for item in site.navigation %}
         <li class="c-nav-main__item{% if page.url contains item.url %} is-selected{% endif %}">
             <a href="{{ site.github.url }}/{{ item.url }}" class="c-nav-main__link">{{ item.title | capitalize }}</a>
         </li>
         {% endfor %}
+        {% endcomment %}
     </ul>
 </nav>
 

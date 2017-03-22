@@ -3,3 +3,204 @@
     ---
     Hacks and quick fixes
 */
+
+.c-row {
+    .o-container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+    }
+}
+
+.c-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .c-header__item {
+        display: flex;
+        align-items: center;
+        //justify-content: center;
+        flex: 1;
+
+        &:first-child {
+            //justify-content: flex-start;
+            display: none;
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+
+        @include mq(bp3) {
+            //align-items: center;
+            justify-content: center;
+
+            &:first-child {
+                justify-content: flex-start;
+                display: flex;
+            }
+
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .c-header__link {
+        display: flex;
+        align-items: center;
+        @include margin-bottom($alpha-leading);
+
+        &,
+        &:visited {
+            //text-decoration: underline;
+            color: palette(color-neutral,xxx-dark);
+        }
+    }
+
+    .c-header__symbol {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+.c-background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        //background-image: radial-gradient(transparent, rgba(palette(color-neutral,xxx-dark),.5));
+    }
+}
+
+.c-intro {
+    background-color: palette(color-neutral,xxx-dark);
+    min-height: calc(100vh - 8.5rem);
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
+
+    .c-background-image {
+        z-index: 101;
+    }
+}
+
+    .c-intro__body {
+        max-width: 32em;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 102;
+
+        @include mq(bp3) {
+            //@include padding-tb($alpha-leading * 4,$alpha-leading * 7.375);
+            @include padding-tb($alpha-leading * 4,$alpha-leading * 3);
+        }
+    }
+
+    .c-intro__logo {
+        //margin-bottom: 0;
+    }
+
+    .c-intro__image {
+        width: 50%;
+        //transform: scale(0.5);
+    }
+
+    .c-intro__title {
+        color: #fff;
+        //margin-bottom: 0;
+        letter-spacing: 0.04em;
+        @include ms8;
+
+        @include mq(bp3) {
+            @include ms10;
+        }
+    }
+
+    .c-intro__date {
+        //color: palette(color-alpha);
+        color: white;
+        //color: palette(color-neutral,xxx-dark);
+        //font-family: $gamma-font-family;
+        font-family: $delta-font-family;
+        text-transform: uppercase;
+        //background-color: palette(color-alpha);
+        //background-color: rgba(palette(color-neutral,xxx-dark),.75);
+        display: inline-block;
+        //@include padding-tb(.2,.3);
+        //@include padding-lr(.675,.675);
+        //@include ms-1;
+        @include ms1;
+        //@include margin-bottom($alpha-leading*2);
+        letter-spacing: 0.04em;
+    }
+
+    .c-intro__description {
+        color: #fff;
+        @include margin-bottom($alpha-leading*1.5);
+    }
+
+.c-intro-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+    .c-intro-nav__list {
+        display: flex;
+        //justify-content: space-around;
+        justify-content: space-between;
+        border-top: 1px solid rgba(white,.25);
+        margin-bottom: 0;
+    }
+
+    .c-intro-nav__item {
+        //text-align: center;
+        //flex: 1;
+    }
+
+    .c-intro-nav__link {
+        display: block;
+        @include padding-tb($alpha-leading*2,$alpha-leading*2);
+
+        &,
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .c-intro-nav__title,
+    .c-intro-nav__date {
+        display: block;
+    }
+
+    .c-intro-nav__title {
+        font-family: $beta-font-family;
+        color: white;
+        @include ms4;
+    }
+
+    .c-intro-nav__date {
+        font-family: $gamma-font-family;
+        text-transform: uppercase;
+        @include ms-2;
+    }

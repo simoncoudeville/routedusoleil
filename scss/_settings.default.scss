@@ -42,10 +42,10 @@
 }
 
 // Base colors
-$color-neutral                      : #aaa !default;
+$color-neutral                      : #7F7F77 !default;
 
-$color-alpha                        : #0074D9 !default;
-$color-beta                         : #2ECC40 !default;
+$color-alpha                        : #ff5a5d !default;
+$color-beta                         : #03BBBB !default;
 
 $color-error                        : #FF4136 !default;
 $color-success                      : #2ECC40 !default;
@@ -54,23 +54,27 @@ $color-notice                       : #FF851B !default;
 // Palettes
 $palettes: (
     color-neutral: (
-        x-light                     : hsl(hue($color-neutral),0,100),
-        light                       : hsl(hue($color-neutral),0,90),
+        xxx-light                   : hsl(hue($color-neutral),saturation($color-neutral),100),
+        xx-light                    : hsl(hue($color-neutral),saturation($color-neutral),95),
+        x-light                     : hsl(hue($color-neutral),saturation($color-neutral),85),
+        light                       : hsl(hue($color-neutral),saturation($color-neutral),67.5),
         base                        : $color-neutral,
-        dark                        : hsl(hue($color-neutral),0,30),
-        x-dark                      : hsl(hue($color-neutral),0,10)
+        dark                        : hsl(hue($color-neutral),saturation($color-neutral),40),
+        x-dark                        : hsl(hue($color-neutral),saturation($color-neutral),30),
+        xx-dark                        : hsl(hue($color-neutral),saturation($color-neutral),20),
+        xxx-dark                      : hsl(hue($color-neutral),saturation($color-neutral),5)
     ),
     color-alpha: (
-        light                       : hsl(hue($color-alpha),70,60),
+        light                       : hsl(hue($color-alpha),saturation($color-alpha),lightness($color-alpha + 10)),
         base                        : $color-alpha,
-        dark                        : hsl(hue($color-alpha),100,25),
-        x-dark                      : hsl(hue($color-alpha),100,15)
+        dark                        : hsl(hue($color-alpha),saturation($color-alpha - 20),lightness($color-alpha - 20)),
+        x-dark                      : hsl(hue($color-alpha),saturation($color-alpha - 40),lightness($color-alpha - 40))
     ),
     color-beta: (
-        light                       : hsl(hue($color-beta),70,60),
+        light                       : hsl(hue($color-beta),saturation($color-beta),lightness($color-beta + 20)),
         base                        : $color-beta,
-        dark                        : hsl(hue($color-beta),100,25),
-        x-dark                      : hsl(hue($color-beta),100,15)
+        dark                        : hsl(hue($color-beta),saturation($color-beta),lightness($color-beta - 10)),
+        x-dark                      : hsl(hue($color-beta),saturation($color-beta),lightness($color-beta - 20))
     ),
     color-error: (
         light                       : hsl(hue($color-error),70,60),
@@ -120,13 +124,19 @@ $ms13                               : 100 !default;
 // ---
 
 $alpha-font-family                  : "acumin-pro", sans-serif !default;
-//$alpha-font-family                  : sans-serif !default;
-$beta-font-family                   : "bebas-neue", serif !default;
+//$alpha-font-family                  : "roboto", sans-serif !default;
+$beta-font-family                   : "bebas-neue", sans-serif !default;
+$gamma-font-family                  : "roboto-mono", sans-serif !default;
+$delta-font-family                  : "acumin-pro-condensed", sans-serif !default;
+//$delta-font-family                  : "roboto-condensed", sans-serif !default;
+//$gamma-font-family                  : "droid-sans-mono", sans-serif !default;
+//$gamma-font-family                  : "motor", sans-serif !default;
 
 $alpha-font-size                    : $ms0 !default;
 
 $alpha-font-weight                  : 400 !default;
-$beta-font-weight                   : 700 !default;
+$beta-font-weight                   : 600 !default;
+$gamma-font-weight                  : 700 !default;
 
 $alpha-line-height                  : 1.5 !default;
 
@@ -137,7 +147,7 @@ $beta-leading                       : 2 !default;
 // UI
 // ---
 
-$radius                             : 5px !default;
+$radius                             : 3px !default;
 $border-width                       : 1px !default;
 $border-style                       : solid !default;
 
@@ -163,7 +173,8 @@ $breakpoints: (
     bp2                             : 480/16*1em,
     bp3                             : 680/16*1em,
     bp4                             : 960/16*1em,
-    bp5                             : 1140/16*1em
+    bp5                             : 1140/16*1em,
+    bp6                             : 1640/16*1em
 ) !default;
 
 // ---
@@ -213,50 +224,50 @@ $html-font-weight                   : $alpha-font-weight !default;
 $html-font-size                     : $alpha-font-size !default;
 $html-line-height                   : $alpha-line-height !default;
 
-$html-responsive-font-size          : false !default;
+$html-responsive-font-size          : true !default;
 $html-responsive-font-breakpoint    : bp5 !default;
 $html-responsive-font-magnification : 112.5% !default;
 
-$html-background-color              : palette(color-neutral,dark) !default;
-$body-color                         : palette(color-neutral,dark) !default;
+$html-background-color              : palette(color-neutral,xxx-light) !default;
+$body-color                         : palette(color-neutral,xxx-dark) !default;
 
 $body-font-smoothing                : true !default;
 
-$body-selection-background-color    : palette(color-neutral,dark) !default;
-$body-selection-color               : palette(color-neutral,light) !default;
+$body-selection-background-color    : palette(color-neutral,xxx-dark) !default;
+$body-selection-color               : palette(color-neutral,xxx-light) !default;
 $body-selection-text-shadow         : none !default;
 
 // ---
 // Typography
 // ---
 
-$h1-font-family                     : $alpha-font-family !default;
+$h1-font-family                     : $beta-font-family !default;
 $h1-font-weight                     : $alpha-font-weight !default;
 $h1-font-size                       : $ms6 !default;
 $h1-line-height                     : 2 !default;
 $h1-margin-bottom                   : $alpha-leading !default;
 
-$h2-font-family                     : $alpha-font-family !default;
+$h2-font-family                     : $beta-font-family !default;
 $h2-font-weight                     : $alpha-font-weight !default;
 $h2-font-size                       : $ms4 !default;
 $h2-line-height                     : 1.5 !default;
 $h2-margin-bottom                   : $alpha-leading !default;
 
 $h3-font-family                     : $alpha-font-family !default;
-$h3-font-weight                     : $alpha-font-weight !default;
-$h3-font-size                       : $ms3 !default;
-$h3-line-height                     : 1.25 !default;
+$h3-font-weight                     : $beta-font-weight !default;
+$h3-font-size                       : $ms1 !default;
+$h3-line-height                     : 1.125 !default;
 $h3-margin-bottom                   : $alpha-leading !default;
 
 $h4-font-family                     : $alpha-font-family !default;
-$h4-font-weight                     : $alpha-font-weight !default;
-$h4-font-size                       : $ms2 !default;
-$h4-line-height                     : 1.25 !default;
+$h4-font-weight                     : $beta-font-weight !default;
+$h4-font-size                       : $ms0 !default;
+$h4-line-height                     : 1 !default;
 $h4-margin-bottom                   : $alpha-leading !default;
 
 $h5-font-family                     : $alpha-font-family !default;
-$h5-font-weight                     : $alpha-font-weight !default;
-$h5-font-size                       : $ms2 !default;
+$h5-font-weight                     : $beta-font-weight !default;
+$h5-font-size                       : $ms0 !default;
 $h5-line-height                     : 1 !default;
 $h5-margin-bottom                   : $alpha-leading !default;
 
@@ -268,7 +279,7 @@ $h6-margin-bottom                   : $alpha-leading !default;
 
 $base-font-size                     : $alpha-font-size !default;
 $base-line-height                   : 1 !default;
-$base-margin-bottom                 : $beta-leading !default;
+$base-margin-bottom                 : $alpha-leading !default;
 $base-indent                        : 2 !default;
 
 $blockquote-font-style              : italic !default;
@@ -345,7 +356,7 @@ $caption-padding-bottom             : $alpha-leading !default;
 // Grid
 // ---
 
-$grid-max-width                     : map-get($breakpoints,bp5) !default;
+$grid-max-width                     : map-get($breakpoints,bp6) !default;
 $grid-gutter                        : $columns-gutter !default;
 
 // ---

@@ -5,15 +5,40 @@
 */
 
 .c-row {
-    @include padding-tb($alpha-leading,0);
-    @include padding-lr($columns-gutter,$columns-gutter);
+    position: relative;
+    @include padding-tb($alpha-leading * 2,$alpha-leading);
+    @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
 }
 
 .c-row--alpha {
-    background-color: palette(color-neutral,x-light);
+    background-color: palette(color-neutral,xxx-light);
 }
 
 .c-row--beta {
-    color: palette(color-neutral,light);
-    background-color: palette(color-neutral,dark);
+    color: palette(color-neutral,xx-light);
+    background-color: palette(color-neutral,xxx-dark);
+}
+
+.c-row--intro {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include mq(bp4,max) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.c-row--header {
+    //position: fixed;
+    //position: absolute;
+    //top: 0;
+    //right: 0;
+    //left: 0;
+    //z-index: 20;
+    background-color: #fff;
+
+    .o-container {
+        max-width: none;
+    }
 }

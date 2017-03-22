@@ -1,11 +1,32 @@
-<div class="js-nav-holder c-row c-row--alpha">
+<div class="js-nav-holder c-row c-row--header">
     <div class="o-container">
-        <div class="o-grid">
-            <div class="o-grid__item">
+        <div class="c-header">
+            <div class="c-header__item">
                 {% include components.logo.html %}
-
-                {% include components.nav-main.html %}
             </div>
+            <div class="c-header__item">
+                {% include components.logo-mark.html %}
+            </div>
+            <div class="c-header__item">
+                {% comment %}
+                {% include components.nav-main.html %}
+                {% endcomment %}
+
+                    <a class="c-header__link" href="#!">
+                        {% include atom.symbol.html value="hamburger" class="c-header__symbol" %}
+                    </a>
+
+            </div>
+            {% comment %}
+            <p>
+                <a href="" class="c-header__link">projects</a>
+            </p>
+            <p>
+                <a class="c-header__link" href="#!">
+                    {% include atom.symbol.html value="hamburger" class="c-header__symbol" %}
+                </a>
+            </p>
+            {% endcomment %}
         </div>
     </div>
 </div>

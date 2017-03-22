@@ -21,6 +21,10 @@
     display: inline-block;
     margin: 0;
     text-align: center;
+    font-weight: $gamma-font-weight;
+    text-transform: uppercase;
+    //letter-spacing: 1px;
+    font-family: $delta-font-family;
     vertical-align: middle;
     touch-action: manipulation; /* [1] */
     background-image: none; /* [2] */
@@ -30,11 +34,12 @@
     border-width: 1px;
     transition-duration: $animation-duration-alpha;
     transition-timing-function: $animation-easing-alpha;
-    transition-property: background, color, border;
+    transition-property: transform, background, color, border;
     outline: none;
     line-height: normal;
     appearance: none;
     box-shadow: none;
+    letter-spacing: 0.04em;
     -webkit-font-smoothing: antialiased; /* [4] */
     -moz-osx-font-smoothing: grayscale; /* [4] */
 
@@ -81,6 +86,12 @@
     }
 }
 
+// round Button
+
+.c-button--round {
+    border-radius: 100px;
+}
+
 // Button sizes
 
 .c-button--sm {
@@ -94,8 +105,8 @@
 }
 
 .c-button--lg {
-    @include padding-lr(1.25,1.25);
-    @include input-dimensions($alpha-font-size,1,0,1,1);
+    @include padding-lr(2,2);
+    @include input-dimensions($alpha-font-size,1,0,.9,1.1);
 }
 
 // Button colors
@@ -106,19 +117,21 @@
 
     &,
     &:visited {
-        color: palette(color-neutral,x-light);
+        color: white;
     }
 
     &:hover,
     &:focus {
-        background-color: palette(color-alpha,light);
-        color: palette(color-neutral,x-light);
+        background-color: white;
+        border-color: white;
+        color: palette(color-alpha);
     }
 
     &:active {
-        background-color: palette(color-alpha);
+        background-color: white;
+        border-color: white;
+        color: palette(color-alpha);
     }
-
 }
 
 .c-button--beta {
@@ -127,24 +140,70 @@
 
     &,
     &:visited {
-        color: palette(color-neutral,x-light);
+        color: white;
     }
 
     &:hover,
     &:focus {
-        background-color: palette(color-beta,light);
-        color: palette(color-neutral,x-light);
+        background-color: white;
+        border-color: white;
+        color: palette(color-beta);
+    }
+
+    &:active {
+        //background-color: palette(color-beta);
+        //border-color: palette(color-beta);
+        background-color: white;
+        border-color: white;
+        color: palette(color-beta);
+    }
+}
+
+.c-button--beta-neg {
+    background-color: white;
+    border-color: white;
+
+    &,
+    &:visited {
+        //color: white;
+        color: palette(color-beta);
+    }
+
+    &:hover,
+    &:focus {
+        background-color: palette(color-beta);
+        border-color: palette(color-beta);
+        color: white;
     }
 
     &:active {
         background-color: palette(color-beta);
+        border-color: palette(color-beta);
+        color: white;
     }
+}
+
+.c-button--shadow {
+    box-shadow: 0 5px 25px rgba(palette(color-neutral,xxx-dark),.125);
 }
 
 // Modifiers
 
 .c-button--postfix {
     border-radius: 0 $radius $radius 0;
+}
+
+// effects
+
+.c-button--effect-grow {
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
 }
 
 // Button-group

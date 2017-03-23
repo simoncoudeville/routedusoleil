@@ -23,10 +23,21 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    @include mq(bp4,max) {
+    //@include mq(bp4,max) {
         padding-left: 0;
         padding-right: 0;
-    }
+    //}
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: palette(color-neutral,xxx-light);
+}
+
+.c-row--main {
+    //margin-top: calc(100vh + 100px);
+    margin-top: 100vh;
+    //box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.5);
 }
 
 .c-row--header {
@@ -36,9 +47,9 @@
     //right: 0;
     //left: 0;
     //z-index: 20;
-    background-color: #fff;
+    //background-color: #fff;
 
-    .o-container {
-        max-width: none;
-    }
+    //.o-container {
+    //    max-width: none;
+    //}
 }

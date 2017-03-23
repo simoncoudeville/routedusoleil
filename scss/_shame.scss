@@ -12,6 +12,27 @@
     }
 }
 
+.c-page__header {
+    //background-color: #fff;
+    position: fixed;
+    //position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    transition: all $animation-duration-alpha $animation-easing-alpha;
+
+    &.is-white {
+        background-color: #fff;
+    }
+}
+
+.c-page__main {
+    position: relative;
+    z-index: 10;
+    //padding-top: 6.5rem;
+}
+
 .c-header {
     display: flex;
     align-items: center;
@@ -56,7 +77,12 @@
         &,
         &:visited {
             //text-decoration: underline;
-            color: palette(color-neutral,xxx-dark);
+            //color: palette(color-neutral,xxx-dark);
+            color: white;
+
+            .is-white & {
+                color: palette(color-neutral,xxx-dark);
+            }
         }
     }
 
@@ -74,7 +100,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: .5;
+    opacity: .75;
 
     &:after {
         content: '';
@@ -84,13 +110,17 @@
         right: 0;
         bottom: 0;
         left: 0;
-        //background-image: radial-gradient(transparent, rgba(palette(color-neutral,xxx-dark),.5));
+        background-image: radial-gradient(transparent, rgba(palette(color-neutral,xxx-dark),.5));
     }
 }
 
 .c-intro {
     background-color: palette(color-neutral,xxx-dark);
-    min-height: calc(100vh - 8.5rem);
+
+    //min-height: calc(100vh - 8.5rem);
+
+    min-height: 100vh;
+
     display: flex;
     align-items: center;
     z-index: 10;
@@ -100,6 +130,38 @@
         z-index: 101;
     }
 }
+
+    .c-intro-nav {
+        position: absolute;
+        left: -2px;
+        z-index: 103;
+        color: #fff;
+        font-family: $beta-font-family;
+        transform: rotate(-90deg);
+        transform-origin: bottom center;
+        transform-style: preserve-3D;
+        display: flex;
+        align-items: center;
+        @include text-dimensions($ms2,1);
+    }
+
+    .c-intro__arrow--down {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 104;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        @include margin-bottom($alpha-leading*2);
+        @include text-dimensions($ms2,1);
+    }
+
+    .c-intro-nav__position {
+        display: block;
+        @include margin-lr($columns-gutter);
+    }
 
     .c-intro__body {
         max-width: 32em;
@@ -157,50 +219,55 @@
         @include margin-bottom($alpha-leading*1.5);
     }
 
-.c-intro-nav {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
-}
+    .c-intro__arrow {
+        position: absolute;
 
-    .c-intro-nav__list {
-        display: flex;
-        //justify-content: space-around;
-        justify-content: space-between;
-        border-top: 1px solid rgba(white,.25);
-        margin-bottom: 0;
     }
 
-    .c-intro-nav__item {
-        //text-align: center;
-        //flex: 1;
-    }
-
-    .c-intro-nav__link {
-        display: block;
-        @include padding-tb($alpha-leading*2,$alpha-leading*2);
-
-        &,
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
-    .c-intro-nav__title,
-    .c-intro-nav__date {
-        display: block;
-    }
-
-    .c-intro-nav__title {
-        font-family: $beta-font-family;
-        color: white;
-        @include ms4;
-    }
-
-    .c-intro-nav__date {
-        font-family: $gamma-font-family;
-        text-transform: uppercase;
-        @include ms-2;
-    }
+//.c-intro-nav {
+//    position: absolute;
+//    right: 0;
+//    bottom: 0;
+//    left: 0;
+//    display: none;
+//}
+//
+//    .c-intro-nav__list {
+//        display: flex;
+//        //justify-content: space-around;
+//        justify-content: space-between;
+//        border-top: 1px solid rgba(white,.25);
+//        margin-bottom: 0;
+//    }
+//
+//    .c-intro-nav__item {
+//        //text-align: center;
+//        //flex: 1;
+//    }
+//
+//    .c-intro-nav__link {
+//        display: block;
+//        @include padding-tb($alpha-leading*2,$alpha-leading*2);
+//
+//        &,
+//        &:hover {
+//            text-decoration: none;
+//        }
+//    }
+//
+//    .c-intro-nav__title,
+//    .c-intro-nav__date {
+//        display: block;
+//    }
+//
+//    .c-intro-nav__title {
+//        font-family: $beta-font-family;
+//        color: white;
+//        @include ms4;
+//    }
+//
+//    .c-intro-nav__date {
+//        font-family: $gamma-font-family;
+//        text-transform: uppercase;
+//        @include ms-2;
+//    }

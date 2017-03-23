@@ -26,9 +26,14 @@
 
 .c-logo--label {
     display: none;
+    color: white;
 
     @include mq(bp3) {
         display: inline-flex;
+    }
+
+    .is-white & {
+        color: palette(color-neutral,xxx-dark);
     }
 }
 
@@ -53,10 +58,15 @@
         display: block;
         height: $mark-height;
         width: $mark-width;
-        background-image: url('../img/png/logo-black.png');
+        //background-image: url('../img/png/logo-black.png');
+        background-image: url('../img/png/logo-white.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         //@include margin-bottom($alpha-leading);
         //@include margin-right($columns-gutter);
+
+        .is-white & {
+            background-image: url('../img/png/logo-black.png');
+        }
     }

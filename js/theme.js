@@ -6,6 +6,24 @@ var chopstick =
         chopstick.loadObject(chopstick.mobileNav, 'chopstick.mobileNav');
         chopstick.loadObject(chopstick.hide, 'chopstick.hide');
         chopstick.loadObject(chopstick.toggle, 'chopstick.toggle');
+
+        $(function() {
+        //caches a jQuery object containing the header element
+            var header = $(".js-header");
+            var headerHeight = header.height();
+            var theHeight = $(window).height() - headerHeight;
+            var sdegree = 0;
+
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= theHeight) {
+                    header.addClass("is-white");
+                } else {
+                    header.removeClass("is-white");
+                }
+            });
+        });
     },
 
     /**

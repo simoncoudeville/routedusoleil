@@ -8,4 +8,7 @@ group :development do
 
     # Jekyll
     gem 'jekyll', '~> 3.2', '>= 3.2.1'
+
+    #github pages
+    gem "github-pages", group: :jekyll_plugins
 end

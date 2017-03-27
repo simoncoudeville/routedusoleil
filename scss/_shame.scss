@@ -24,6 +24,7 @@
 
     &.is-white {
         background-color: #fff;
+        box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
     }
 }
 

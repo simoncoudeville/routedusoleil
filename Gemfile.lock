@@ -200,7 +200,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll (~> 3.2, >= 3.2.1)
+  jekyll
   scss_lint
 
 BUNDLED WITH

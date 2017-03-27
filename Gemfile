@@ -7,7 +7,7 @@ group :development do
     gem 'scss_lint'
 
     # Jekyll
-    gem 'jekyll', '~> 3.2', '>= 3.2.1'
+    gem 'jekyll'
 
     #github pages
     gem "github-pages", group: :jekyll_plugins

@@ -28,6 +28,13 @@ var chopstick =
                 }
             });
         });
+
+        $('.js-wall').masonry({
+            // options...
+            itemSelector: '.js-wall-item',
+            columnWidth: '.js-wall-sizer',
+            percentPosition: true
+        });
     },
 
     /**

@@ -281,8 +281,8 @@
 //    }
 
 .c-box {
-    @include padding-tb($alpha-leading, $alpha-leading);
-    @include padding-lr($columns-gutter, $columns-gutter);
+    //@include padding-tb($alpha-leading, $alpha-leading);
+    //@include padding-lr($columns-gutter, $columns-gutter);
     position: relative;
     overflow: hidden;
     //@include margin-bottom($alpha-leading*2);
@@ -310,8 +310,8 @@
         //box-shadow: 0 0 0 1px rgba(palette(color-neutral,xxx-dark),.1);
 
         .c-box--half & {
-            padding-bottom: calc(50% - 1rem);
-            //padding-bottom: 50%;
+            //padding-bottom: calc(50% - 1rem);
+            padding-bottom: 50%;
         }
 
         .c-box--double & {

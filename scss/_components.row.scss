@@ -45,7 +45,7 @@
     @include padding-tb($alpha-leading,$alpha-leading);
     @include padding-lr($columns-gutter,$columns-gutter);
 
-    //padding: 0;
+    padding: 0;
 }
 
 .c-row--header {

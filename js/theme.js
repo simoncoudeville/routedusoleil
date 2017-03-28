@@ -11,13 +11,17 @@ var chopstick =
         //caches a jQuery object containing the header element
             var header = $(".js-header");
             var headerHeight = header.height();
-            var theHeight = $(window).height() - headerHeight;
+            var theHeight = $(window).height() - headerHeight - 36;
             var sdegree = 0;
+
+            console.log(theHeight);
 
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
+                console.log(scroll);
 
                 if (scroll >= theHeight) {
+                    console.log("now");
                     header.addClass("is-white");
                 } else {
                     header.removeClass("is-white");

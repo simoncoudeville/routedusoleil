@@ -183,6 +183,30 @@
     }
 }
 
+.c-button--alpha-neg {
+    background-color: white;
+    border-color: white;
+
+    &,
+    &:visited {
+        //color: white;
+        color: palette(color-alpha);
+    }
+
+    &:hover,
+    &:focus {
+        background-color: palette(color-alpha);
+        border-color: palette(color-alpha);
+        color: white;
+    }
+
+    &:active {
+        background-color: palette(color-alpha);
+        border-color: palette(color-alpha);
+        color: white;
+    }
+}
+
 .c-button--shadow {
     box-shadow: 0 5px 25px rgba(palette(color-neutral,xxx-dark),.125);
 }

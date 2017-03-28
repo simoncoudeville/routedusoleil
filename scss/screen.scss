@@ -81,6 +81,7 @@
 @import '../vendor/chopstick-sass/scss/utilities.states';
 @import '../vendor/chopstick-sass/scss/utilities.print';
 @import '../vendor/chopstick-sass/scss/utilities.debug';
+@import 'utilities.ms';
 
 /* Nasty, hacky, quick-fix CSS: http://csswizardry.com/2013/04/shame-css/ */
 @import 'shame';

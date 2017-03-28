@@ -1,0 +1,22 @@
+<div class="c-box{% if include.class %} {{ include.class }}{% endif %}">
+    <div class="c-box__body u-bgcolor-neutral-xxx-dark">
+        <div class="c-background-image" style="background-image: url('img/jpg/{{ include.bg }}');"></div>
+        <div class="c-box__content c-box__content--lg">
+            {% if include.video %}
+                <div class="c-box__play">
+                    <svg class="c-symbol c-box__play-symbol"><use xlink:href="#c-symbol---play_circle_filled"></use></svg>
+                </div>
+            {% endif %}
+            {% if include.title %}
+                <h2 class="c-box__title">
+                    {{ include.title }}
+                </h2>
+            {% endif %}
+            {% if include.paragraph %}
+                <p class="c-box__paragraph">
+                    {{ include.paragraph }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

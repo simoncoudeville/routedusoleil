@@ -4,78 +4,127 @@
     Site navigation, breadcrumbs, etc.
 */
 
-.c-nav-main {
-    width: 100%;
-    float: left;
-    display: none;
-    font-family: $alpha-font-family;
-
-    @include mq(bp3) {
-        display: block;
-        width: auto;
-        float: right;
-    }
-
-    &.is-visible {
-        display: block;
-    }
+.c-nav-title {
+    color: palette(color-neutral);
+    //text-align: center;
+    font-family: $gamma-font-family;
+    //font-weight: $beta-font-weight;
+    @include ms-1;
 }
 
-    .c-nav-main__list {
+.c-nav-projects {
+    //border-bottom: 1px solid rgba(white,.1);
+    @include padding-bottom($alpha-leading);
+}
+
+    .c-nav-projects__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    .c-nav-projects__item {
+        flex-basis: 100%;
+        //text-align: center;
+        //border-bottom: 1px solid rgba(white,.1);
+        //@include margin-bottom($alpha-leading);
+        //@include padding-bottom($alpha-leading);
+
+        //& + & {
+        //    @include padding-top($alpha-leading*2);
+        //}
+
         @include mq(bp3) {
-            display: flex;
+            flex-basis: 50%;
+        }
+
+        //@include mq(bp4) {
+        //    flex-basis: 33.3333%;
+        //}
+
+        &.is-inactive {
+            opacity: .5;
         }
     }
 
-    .c-nav-main__item {
-        & + & {
-            border-top: 1px dotted palette(color-neutral,light);
-        }
-
-        @include mq(bp3) {
-            & + & {
-                border-top: 0;
-                @include margin-left($columns-gutter * 2);
-            }
-        }
-    }
-
-    .c-nav-main__link {
+    .c-nav-projects__link {
         display: block;
-        color: palette(color-alpha);
         text-decoration: none;
-        @include text-dimensions($alpha-font-size,1,0,.25,.25);
+        //@include padding-lr($columns-gutter * 2,$columns-gutter * 2);
+        @include padding-tb($alpha-leading,$alpha-leading);
+    }
+
+    a.c-nav-projects__link {
 
         &,
-        &:visited {
-            color: $body-color;
-            text-decoration: underline;
-        }
-
-        &:hover,
-        .is-selected & {
-
+        &:visited,
+        &:hover {
+            text-decoration: none;
         }
     }
 
-.c-nav-main-trigger {
-    user-select: none;
-    position: absolute;
-    top: 2em;
-    right: 1em;
-    display: block;
-    color: palette(color-alpha);
-    background-color: palette(color-neutral,x-light);
-    border: 1px solid palette(color-alpha);
-    outline: 0;
-    border-radius: $radius;
+    .c-nav-projects__label {
+        display: block;
+        font-weight: $beta-font-weight;
+        color: white;
+        @include margin-bottom($alpha-leading/4);
+        @include ms4;
 
-    &.is-active {
-        color: palette(color-neutral,x-light);
-        background-color: palette(color-alpha);
+        @include mq(bp3) {
+            @include ms6;
+        }
     }
 
-    @include mq(bp3) {
-        display: none;
+    .c-nav-projects__status {
+        color: palette(color-neutral);
+        font-family: $gamma-font-family;
+        @include ms-1;
     }
+
+    .c-nav-projects__status--open {
+        color: palette(color-alpha);
+    }
+
+    .c-nav-projects__date {
+        color: palette(color-neutral);
+        display: block;
+    }
+
+//contact
+
+.c-nav-contact {
+    //text-align: center;
+    color: white;
+    //@include padding-lr($columns-gutter * 2,$columns-gutter * 2);
+    //@include padding-tb($alpha-leading * 2,$alpha-leading);
+    @include padding-top($alpha-leading);
 }
+
+    .c-nav-contact__title {
+        margin-bottom: 0;
+        @include ms0;
+    }
+
+// social
+
+.c-nav-social {
+    display: flex;
+}
+
+    .c-nav-social__item {
+        & + & {
+            @include margin-left($columns-gutter);
+        }
+    }
+
+    .c-nav-social__link {
+        &,
+        &:visited {
+            color: white;
+        }
+    }
+
+    .c-nav-social__symbol {
+        width: 1.75rem;
+        height: 1.75rem;
+    }

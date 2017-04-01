@@ -11,11 +11,17 @@
                 {% comment %}
                 {% include components.nav-main.html %}
                 {% endcomment %}
-
-                    <a class="c-header__link" href="#!">
-                        {% include atom.symbol.html value="hamburger" class="c-header__symbol" %}
-                    </a>
-
+                <a class="c-header__nav-trigger js-nav-trigger is-active" href="#!">
+                    {% include atom.symbol.html value="hamburger" class="c-header__symbol c-header__symbol--hamburger" %}
+                    {% include atom.symbol.html value="close" class="c-header__symbol c-header__symbol--close" %}
+                    {% comment %}
+                    <svg class="c-header__symbol c-hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <rect class="c-hamburger__line c-hamburger__line--top" width="20" height="2" x="2" y="5"/>
+                        <rect class="c-hamburger__line c-hamburger__line--middle" width="20" height="2" x="2" y="11"/>
+                        <rect class="c-hamburger__line c-hamburger__line--bottom" width="20" height="2" x="2" y="17"/>
+                    </svg>
+                    {% endcomment %}
+                </a>
             </div>
             {% comment %}
             <p>

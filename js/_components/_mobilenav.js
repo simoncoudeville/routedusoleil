@@ -3,7 +3,7 @@ chopstick.mobileNav =
 {
     settings:
     {
-        navigation: $('.js-nav'),
+        container: $('.js-nav-container'),
         trigger: $('.js-nav-trigger')
     },
 
@@ -25,7 +25,7 @@ chopstick.mobileNav =
     // build mobile nav
     toggleNavigation: function()
     {
-        mobileNavSettings.navigation.toggleClass('is-visible');
+        mobileNavSettings.container.toggleClass('has-visible-nav');
         mobileNavSettings.trigger.toggleClass('is-active');
     }
 };

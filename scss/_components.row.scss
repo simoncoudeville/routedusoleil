@@ -27,19 +27,13 @@
         padding-left: 0;
         padding-right: 0;
     //}
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: palette(color-neutral,xxx-light);
+
     //background-color: palette(color-neutral,xxx-dark);
 }
 
 .c-row--main {
     //margin-top: calc(100vh + 100px);
-    margin-top: calc(100vh - 2rem);
-    //margin-top: 100vh;
-    box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
+
     //padding: 0;
 
     @include padding-tb($alpha-leading/2, $alpha-leading/2);
@@ -62,4 +56,12 @@
     //.o-container {
     //    max-width: none;
     //}
+}
+
+.c-row--nav {
+    @include padding-tb($alpha-leading * 7.5,$alpha-leading);
+    //padding-left: 0;
+    //padding-right: 0;
+    //padding-bottom: 0;
+    //@include padding-top($alpha-leading * 7.5);
 }

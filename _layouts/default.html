@@ -3,7 +3,7 @@
 
 {% include generic.head.html %}
 
-<body{% if page.section %} class="c-page"{% endif%}>
+<body class="js-nav-container">
 
     <!-- Deprecated browser alert -->
     {% include components.browser-alert.html %}
@@ -13,8 +13,17 @@
     <div class="c-page__header js-header">
         {% include components.header.html %}
     </div>
+    <div class="c-page__nav">
+        <div class="c-row c-row--nav">
+            <div class="o-container">
+                {% include components.nav-main.html %}
+            </div>
+        </div>
+    </div>
     <!-- End page header -->
-
+    <div class="c-page__intro">
+        {% include components.intro.html %}
+    </div>
     <div class="c-page__main">
         {{ content }}
     </div>

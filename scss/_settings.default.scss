@@ -210,9 +210,9 @@ $increments: (
 // Animations
 // ---
 
-$animation-duration-alpha           : .1s !default;
-$animation-duration-beta            : .2s !default;
-$animation-duration-gamma           : .3s !default;
+$animation-duration-alpha           : .15s !default;
+$animation-duration-beta            : .3s !default;
+$animation-duration-gamma           : .45s !default;
 $animation-easing-alpha             : ease-in-out !default;
 $animation-easing-beta              : cubic-bezier(.68, -.55, .265, 1.55) !default; // bouncy
 
@@ -299,7 +299,7 @@ $horizontal-rule-border-color       : palette(color-neutral,light) !default;
 $horizontal-rule-margin-top         : 0 !default;
 $horizontal-rule-margin-bottom      : $alpha-leading !default;
 
-$link-transition                    : none !default;
+$link-transition                    : all $animation-duration-alpha $animation-easing-alpha !default;
 
 $link-decoration                    : none !default;
 $link-decoration--hover             : underline !default;

@@ -27,6 +27,7 @@
 .c-logo--label {
     display: none;
     color: white;
+    transition: all $animation-duration-alpha $animation-easing-alpha;
 
     @include mq(bp3) {
         display: inline-flex;
@@ -34,6 +35,10 @@
 
     .is-white & {
         color: palette(color-neutral,xxx-dark);
+
+        .has-visible-nav & {
+            color: white;
+        }
     }
 }
 
@@ -68,5 +73,9 @@
 
         .is-white & {
             background-image: url('../img/png/logo-black.png');
+
+            .has-visible-nav & {
+                background-image: url('../img/png/logo-white.png');
+            }
         }
     }

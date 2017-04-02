@@ -33,7 +33,7 @@
         display: inline-flex;
     }
 
-    .is-white & {
+    .is-negative & {
         color: palette(color-neutral,xxx-dark);
 
         .has-visible-nav & {
@@ -71,7 +71,7 @@
         //@include margin-bottom($alpha-leading);
         //@include margin-right($columns-gutter);
 
-        .is-white & {
+        .is-negative & {
             background-image: url('../img/png/logo-black.png');
 
             .has-visible-nav & {

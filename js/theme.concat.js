@@ -22,9 +22,9 @@ var chopstick =
 
                 if (scroll >= theHeight) {
                     console.log("now");
-                    header.addClass("is-white");
+                    header.addClass("is-negative");
                 } else {
-                    header.removeClass("is-white");
+                    header.removeClass("is-negative");
                 }
             });
         });

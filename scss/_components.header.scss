@@ -45,7 +45,7 @@
         &:visited {
             color: white;
 
-            .is-white & {
+            .is-negative & {
                 color: palette(color-neutral,xxx-dark);
 
                 .has-visible-nav & {
@@ -61,7 +61,7 @@
         fill: white;
         transition: all $animation-duration-alpha $animation-easing-alpha;
 
-        .is-white & {
+        .is-negative & {
             fill: palette(color-neutral,xxx-dark);
 
             .has-visible-nav & {

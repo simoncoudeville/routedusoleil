@@ -56,7 +56,6 @@
         opacity: 0;
         visibility: hidden;
         overflow: auto;
-        transform: translateY(10px);
         transition: all $animation-duration-beta $animation-easing-alpha, visibility 0s $animation-duration-beta $animation-easing-alpha;
 
         .has-visible-nav & {
@@ -64,6 +63,15 @@
             transform: translateY(0);
             visibility: visible;
             transition: all $animation-duration-beta $animation-easing-alpha;
+        }
+    }
+
+    .c-page__nav-container {
+        transform: translateY(10px);
+        transition: all $animation-duration-beta $animation-easing-alpha;
+
+        .has-visible-nav & {
+            transform: translateY(0);
         }
     }
 

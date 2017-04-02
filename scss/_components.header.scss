@@ -1,0 +1,85 @@
+/*
+    Component: Header
+*/
+
+.c-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .c-header__item {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        &:first-child {
+            display: none;
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+
+        @include mq(bp3) {
+            justify-content: center;
+
+            &:first-child {
+                justify-content: flex-start;
+                display: flex;
+            }
+
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .c-header__nav-trigger {
+        display: flex;
+        align-items: center;
+        transition: all $animation-duration-alpha $animation-easing-alpha;
+        @include margin-bottom($alpha-leading);
+
+        &,
+        &:visited {
+            color: white;
+
+            .is-white & {
+                color: palette(color-neutral,xxx-dark);
+
+                .has-visible-nav & {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .c-header__symbol {
+        width: 1.5em;
+        height: 1.5em;
+        fill: white;
+        transition: all $animation-duration-alpha $animation-easing-alpha;
+
+        .is-white & {
+            fill: palette(color-neutral,xxx-dark);
+
+            .has-visible-nav & {
+                fill: white;
+            }
+        }
+    }
+
+    .c-header__symbol--close {
+        display: none;
+
+        .has-visible-nav & {
+            display: block;
+        }
+    }
+
+    .c-header__symbol--hamburger {
+        .has-visible-nav & {
+            display: none;
+        }
+    }

@@ -52,10 +52,14 @@
 @import '../vendor/chopstick-sass/scss/objects.tables';
 
 /* Components */
-@import 'components.brand';
-@import 'components.row';
-//@import 'components.icons';
 @import 'components.symbols';
+@import 'components.row';
+@import 'components.header';
+@import 'components.brand';
+@import 'components.navigation';
+@import 'components.page';
+@import 'components.intro';
+//@import 'components.icons';
 //@import 'components.alerts';
 @import 'components.buttons';
 @import 'components.input';
@@ -63,8 +67,11 @@
 //@import 'components.lists';
 //@import 'components.pagination';
 //@import 'components.cards';
-@import 'components.navigation';
-@import 'components.styleguide';
+@import 'components.type';
+@import 'components.avatar';
+@import 'components.boxes';
+@import 'components.backgrounds';
+//@import 'components.styleguide';
 
 /* Plugins */
 @import 'plugins.syntax';

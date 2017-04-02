@@ -1,0 +1,27 @@
+/*
+    Components: Backgrounds
+*/
+
+.c-background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .75;
+    transition: all $animation-duration-beta $animation-easing-alpha;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: radial-gradient(transparent, rgba(palette(color-neutral,xxx-dark),.5));
+    }
+}

@@ -1,0 +1,84 @@
+/*
+    Component: Page
+*/
+
+.c-page {
+    .has-visible-nav {
+        overflow: hidden;
+    }
+}
+
+    .c-page__header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 30;
+        transition: all $animation-duration-alpha $animation-easing-alpha;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: white;
+            height: 0;
+            transition: all $animation-duration-alpha $animation-easing-alpha;
+            box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
+        }
+
+        &.is-white {
+
+            &:before {
+                height: 100%;
+            }
+
+            .has-visible-nav & {
+                background-color: transparent;
+                box-shadow: none;
+
+                &:before {
+                    height: 0;
+                }
+            }
+        }
+    }
+
+    .c-page__nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(palette(color-neutral,xxx-dark),.9);
+        z-index: 20;
+        opacity: 0;
+        visibility: hidden;
+        overflow: auto;
+        transform: translateY(10px);
+        transition: all $animation-duration-beta $animation-easing-alpha, visibility 0s $animation-duration-beta $animation-easing-alpha;
+
+        .has-visible-nav & {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+            transition: all $animation-duration-beta $animation-easing-alpha;
+        }
+    }
+
+    .c-page__intro {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: palette(color-neutral,xxx-light);
+        z-index: 5;
+    }
+
+    .c-page__main {
+        position: relative;
+        z-index: 10;
+        margin-top: calc(100vh - 2rem);
+        box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
+    }

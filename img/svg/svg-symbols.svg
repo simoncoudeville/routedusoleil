@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="c-symbolset">
     <symbol id="c-symbol-close" viewBox="0 0 24 24">
-      <title>close</title><path d="M10.808 12.222l-6.364 6.364L5.858 20l6.364-6.364L18.586 20 20 18.586l-6.364-6.364L20 5.858l-1.414-1.414-6.364 6.364-6.364-6.364-1.414 1.414 6.364 6.364z" fill-rule="evenodd"/>
+      <title>c-symbol-close icon</title>
+      <path fill-rule="evenodd" d="M10.808 12.222l-6.364 6.364L5.858 20l6.364-6.364L18.586 20 20 18.586l-6.364-6.364L20 5.858l-1.414-1.414-6.364 6.364-6.364-6.364-1.414 1.414 6.364 6.364z"/>
     </symbol>
     <symbol id="c-symbol-hamburger" viewBox="0 0 24 24">
       <title>c-symbol-hamburger icon</title>

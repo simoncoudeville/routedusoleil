@@ -8,6 +8,11 @@
     display: flex;
     align-items: center;
     z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
 
     .c-background-image {
@@ -70,6 +75,7 @@
     .c-intro__title {
         color: white;
         letter-spacing: 0.04em;
+        font-family: $beta-font-family;
         @include ms8;
 
         @include mq(bp3) {

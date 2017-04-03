@@ -19,12 +19,12 @@ $modaal-hover-color: rgba(palette(color-neutral,xxx-dark), 0.7);
 
 $modaal-light: #fff;
 $modaal-primary: $color-alpha;
-$modaal-grey: palett(color-neutral);
+$modaal-grey: palette(color-neutral);
 
 
 // Modaal Mixins
 // --------------------------------------------------------
-@mixin modaal-transition($type, $speed: .2s, $ease: ease-in-out) {
+@mixin modaal-transition($type, $speed: $animation-duration-alpha, $ease: $animation-easing-alpha) {
 	transition: $type #{$speed} #{$ease};
 }
 @mixin modaal-hidetext() {
@@ -69,7 +69,7 @@ $modaal-grey: palett(color-neutral);
 	opacity: 1;
 	box-sizing: border-box;
 	-webkit-overflow-scrolling: touch;
-	@include modaal-transition(all, 0.3s);
+	@include modaal-transition(all, $animation-duration-beta);
 	& * {
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;

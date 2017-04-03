@@ -12,6 +12,40 @@
     @include ms-1;
 }
 
+.c-nav-main__list {
+    //margin-bottom: 0;
+    display: flex;
+}
+
+.c-nav-main__item {
+    & + & {
+        @include margin-left($columns-gutter*2);
+    }
+}
+
+.c-nav-main__link {
+    font-weight: $beta-font-weight;
+    @include ms-1;
+
+    &,
+    &:visited {
+        color: palette(color-neutral,xxx-light);
+
+        .is-negative & {
+            color: palette(color-neutral,xxx-dark);
+
+            .has-visible-nav & {
+                color: palette(color-neutral,xxx-light);
+            }
+        }
+    }
+
+    &:hover,
+    &:focus {
+        opacity: .75;
+    }
+}
+
 .c-nav-projects {
     //border-bottom: 1px solid rgba(white,.1);
     @include padding-bottom($alpha-leading);

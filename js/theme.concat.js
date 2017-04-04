@@ -12,16 +12,11 @@ var chopstick =
             var header = $(".js-header");
             var headerHeight = header.height();
             var theHeight = $(window).height() - headerHeight - 36;
-            var sdegree = 0;
-
-            console.log(theHeight);
 
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
-                console.log(scroll);
 
                 if (scroll >= theHeight) {
-                    console.log("now");
                     header.addClass("is-negative");
                 } else {
                     header.removeClass("is-negative");
@@ -37,7 +32,10 @@ var chopstick =
         });
 
         $('.js-intro-carousel').flickity({
-            contain: true
+            // contain: true,
+            // cellSelector: '.js-intro-carousel-item',
+            // bgLazyLoad: true
+            arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
         });
     },
 

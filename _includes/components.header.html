@@ -8,6 +8,7 @@
                 {% include components.logo-mark.html %}
             </div>
             <div class="c-header__item">
+                {% comment %}
                 <nav class="c-nav-main">
                     <ul class="o-list c-nav-main__list">
                         <li class="c-nav-main__item"><a class="c-nav-main__link js-nav-trigger" href="#!">Events</a></li>
@@ -15,13 +16,12 @@
                         <li class="c-nav-main__item"><a class="c-nav-main__link" href="#!">Login</a></li>
                     </ul>
                 </nav>
+                {% endcomment %}
 
-                {% comment %}
                 <a class="c-header__nav-trigger js-nav-trigger is-active" href="#!">
                     {% include atom.symbol.html value="hamburger" class="c-header__symbol c-header__symbol--hamburger" %}
                     {% include atom.symbol.html value="close" class="c-header__symbol c-header__symbol--close" %}
                 </a>
-                {% endcomment %}
             </div>
             {% comment %}
             <p>

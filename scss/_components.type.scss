@@ -11,7 +11,9 @@
 }
 
 .c-type-date {
-    font-family: $delta-font-family;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    //font-family: $delta-font-family;
+    font-family: $gamma-font-family;
+    @include ms-1;
+    //text-transform: uppercase;
+    //letter-spacing: 0.04em;
 }

@@ -3,7 +3,7 @@
 */
 
 .c-page {
-    .has-visible-nav {
+    &.has-visible-nav {
         overflow: hidden;
     }
 }
@@ -23,7 +23,8 @@
             right: 0;
             left: 0;
             background-color: white;
-            height: 0;
+            height: 100%;
+            transform: translateY(-100%);
             transition: all $animation-duration-alpha $animation-easing-alpha;
             box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
         }
@@ -31,7 +32,8 @@
         &.is-negative {
 
             &:before {
-                height: 100%;
+                //height: 100%;
+                transform: translateY(0);
             }
 
             .has-visible-nav & {
@@ -39,7 +41,8 @@
                 box-shadow: none;
 
                 &:before {
-                    height: 0;
+                    //height: 0;
+                    transform: translateY(-100%);
                 }
             }
         }
@@ -56,19 +59,19 @@
         opacity: 0;
         visibility: hidden;
         overflow: auto;
-        transition: all $animation-duration-beta $animation-easing-alpha, visibility 0s $animation-duration-beta $animation-easing-alpha;
+        transition: all $animation-duration-alpha $animation-easing-alpha, visibility 0s $animation-duration-alpha $animation-easing-alpha;
 
         .has-visible-nav & {
             opacity: 1;
             transform: translateY(0);
             visibility: visible;
-            transition: all $animation-duration-beta $animation-easing-alpha;
+            transition: all $animation-duration-alpha $animation-easing-alpha;
         }
     }
 
     .c-page__nav-container {
         transform: translateY(10px);
-        transition: all $animation-duration-beta $animation-easing-alpha;
+        transition: all $animation-duration-alpha $animation-easing-alpha;
 
         .has-visible-nav & {
             transform: translateY(0);

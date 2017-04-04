@@ -69,7 +69,7 @@ $modaal-grey: palette(color-neutral);
 	opacity: 1;
 	box-sizing: border-box;
 	-webkit-overflow-scrolling: touch;
-	@include modaal-transition(all, $animation-duration-beta);
+	@include modaal-transition(all, $animation-duration-alpha);
 	& * {
 		box-sizing: border-box;
 		-webkit-font-smoothing: antialiased;
@@ -78,7 +78,7 @@ $modaal-grey: palette(color-neutral);
 	}
 	.modaal-close {
 		border: none;
-		background: transparent;
+		//background: transparent;
 		padding: 0;
 		-webkit-appearance: none;
 	}
@@ -116,7 +116,7 @@ $modaal-grey: palette(color-neutral);
 	position: relative;
 	vertical-align: middle;
 	text-align: center;
-	padding: 80px 25px;
+	padding: 80px $columns-gutter * 1rem;
 
 	// when is fullscreen
 	.modaal-fullscreen & {
@@ -154,14 +154,14 @@ $modaal-grey: palette(color-neutral);
 
 .modaal-close {
 	position: fixed;
-	right: 1rem;
-	top: 1rem;
+	right: 1.25rem;
+	top: 1.75rem;
 	color: $modaal-light;
 	cursor: pointer;
 	opacity: 1;
 	width: 3em;
 	height: 3em;
-	background: rgba(0,0,0, 0);
+	background: rgba(palette(color-neutral,xxx-light), 1);
 	@include modaal-transition(all);
 	&:focus,
 	&:hover {
@@ -178,11 +178,12 @@ $modaal-grey: palette(color-neutral);
 		display: block;
 		content: " ";
 		position: absolute;
-		top: 14px;
-		left: 23px;
 		width: 2px;
-		height: 22px;
-		background: #fff;
+		height: 1.25rem;
+		top: 50%;
+		left: 50%;
+		margin: -0.615rem 0 0 -1px;
+		background-color: palette(color-neutral,xxx-dark);
 		@include modaal-transition(background);
 	}
 	&:before {
@@ -289,7 +290,7 @@ $modaal-grey: palette(color-neutral);
 		max-width: 800px !important;
 		box-shadow: none !important;
 
-		animation: instaReveal 1s linear forwards;
+		animation: instaReveal $animation-duration-beta linear forwards;
 	}
 }
 
@@ -410,8 +411,12 @@ $modaal-grey: palette(color-neutral);
 // Video
 // --------------------------------------------------------
 .modaal-video-wrap {
-	margin: auto 50px;
+	margin: auto $columns-gutter*1rem;
 	position: relative;
+
+	@include mq(bp3) {
+		margin: 0 $columns-gutter*3rem;
+	}
 }
 
 .modaal-video-container {

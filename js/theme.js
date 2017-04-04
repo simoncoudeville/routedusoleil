@@ -35,6 +35,10 @@ var chopstick =
             columnWidth: '.js-wall-sizer',
             percentPosition: true
         });
+
+        $('.js-intro-carousel').flickity({
+            contain: true
+        });
     },
 
     /**

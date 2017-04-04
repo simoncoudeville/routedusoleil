@@ -5,14 +5,16 @@
 .c-intro {
     background-color: palette(color-neutral,xxx-dark);
     min-height: calc(100vh - 2rem);
+    width: 100%;
     display: flex;
     align-items: center;
     z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    //bottom: 0;
+    position: relative;
     @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
 
     .c-background-image {

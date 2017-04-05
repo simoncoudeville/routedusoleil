@@ -60,6 +60,10 @@ http://flickity.metafizzy.co
     &:active {
         opacity: 0.6;
     }
+
+    @include mq(bp3,max) {
+        display: none;
+    }
 }
 
 .flickity-prev-next-button.previous { left: 1.25rem; }

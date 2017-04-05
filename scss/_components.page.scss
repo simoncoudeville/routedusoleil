@@ -90,6 +90,7 @@
     .c-page__main {
         position: relative;
         z-index: 10;
-        margin-top: calc(100vh - 2rem);
+        //margin-top: calc(100vh - 2rem);
+        margin-top: 100vh;
         box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
     }

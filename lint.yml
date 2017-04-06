@@ -161,17 +161,17 @@ linters:
     enabled: false
 
   SpaceAfterPropertyColon:
-    enabled: true
+    enabled: false
     style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true
 
   SpaceAfterVariableName:
-    enabled: true
+    enabled: false
 
   SpaceBeforeBrace:
-    enabled: true
+    enabled: false
     style: space # or 'new_line'
     allow_single_line_padding: true
 

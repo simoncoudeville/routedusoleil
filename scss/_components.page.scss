@@ -3,6 +3,8 @@
 */
 
 .c-page {
+    background-color: palette(color-neutral,xxx-dark);
+
     &.has-visible-nav {
         overflow: hidden;
     }
@@ -84,13 +86,20 @@
         right: 0;
         left: 0;
         background-color: palette(color-neutral,xxx-light);
+        //background-color: palette(color-neutral,xxx-dark);
         z-index: 5;
+        //transition: transform $animation-duration-alpha $animation-easing-alpha;
+        //
+        //.has-visible-nav & {
+        //    transform: scale(.99);
+        //}
     }
 
     .c-page__main {
         position: relative;
         z-index: 10;
-        //margin-top: calc(100vh - 2rem);
-        margin-top: 100vh;
+        //margin-top: calc(100vh - 1rem);
+        margin-top: calc(100vh - 2rem);
+        //margin-top: 100vh;
         box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
     }

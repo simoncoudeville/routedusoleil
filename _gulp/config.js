@@ -31,8 +31,8 @@ module.exports = {
 
     js: {
         src : [  // source js file
-          path + 'vendor/masonry-layout/dist/masonry.pkgd.min.js',
-          path + 'vendor/modaal/dist/js/modaal.min.js',
+          path + 'js/modaal/modaal.min.js',
+          path + 'js/masonry-layout/masonry.pkgd.min.js',
           path + 'js/scrollme/jquery.scrollme.min.js',
           path + 'js/flickity/flickity.pkgd.min.js',
           path + 'js/theme.js',

@@ -1,6 +1,9 @@
 <div class="c-box{% if include.class %} {{ include.class }}{% endif %}">
     {% if include.video %}
-        <a href="https://www.youtube.com/embed/ShkGF_X-Uaw" data-modaal-type="video" data-modaal-animation="fade" class="c-box__body-link modaal">
+        <a href="https://www.youtube.com/embed/ShkGF_X-Uaw?autoplay=1" data-modaal-type="video" data-modaal-animation="fade" class="c-box__body-link modaal">
+    {% endif %}
+    {% if include.link %}
+        <a href="{{ include.link }}" class="c-box__body-link">
     {% endif %}
     <div class="c-box__body u-bgcolor-neutral-xxx-dark">
         <div class="c-background-image" style="background-image: url('img/jpg/{{ include.bg }}');"></div>
@@ -11,7 +14,7 @@
                 </div>
             {% endif %}
             {% if include.title %}
-                <h2 class="c-box__title">
+                <h2 class="c-box__title {% if include.cta %} c-box__title--cta {% endif %}">
                     {{ include.title }}
                 </h2>
             {% endif %}
@@ -20,8 +23,18 @@
                     {{ include.paragraph }}
                 </p>
             {% endif %}
+            {% if include.button %}
+                <p>
+                    <a href="#!" class="c-button c-button--md c-button--alpha c-button--round c-button--effect-grow">
+                        {{ include.button }}
+                    </a>
+                </p>
+            {% endif %}
         </div>
     </div>
+    {% if include.link %}
+        </a>
+    {% endif %}
     {% if include.video %}
         </a>
     {% endif %}

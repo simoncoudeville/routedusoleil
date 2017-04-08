@@ -17,6 +17,20 @@
  *     Works only on Mac OS X platform.
  */
 
+.c-button-reset {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    appearance: button; /* for input */
+    user-select: none;
+    outline: none;
+}
+
 .c-button {
     display: inline-block;
     margin: 0;
@@ -100,8 +114,8 @@
 }
 
 .c-button--md {
-    @include padding-lr(1,1);
-    @include input-dimensions($ms-1,1,0,.75,.75);
+    @include padding-lr(1.5,1.5);
+    @include input-dimensions($ms-1,1,0,.5,.675);
 }
 
 .c-button--lg {
@@ -209,6 +223,16 @@
 
 .c-button--shadow {
     box-shadow: 0 5px 25px rgba(palette(color-neutral,xxx-dark),.125);
+}
+
+.c-button--ghost {
+    background-color: rgba(white,.5);
+    border: 0;
+    color: white;
+}
+
+.c-button--loadmore {
+    border: 0;
 }
 
 // Modifiers

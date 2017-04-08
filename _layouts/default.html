@@ -5,14 +5,13 @@
 
 <body class="c-page js-nav-container">
 
-    <!-- Deprecated browser alert -->
-    {% include components.browser-alert.html %}
-    <!-- End deprecated browser alert -->
-
     <!-- Page header -->
     <div class="c-page__header js-header">
         {% include components.header.html %}
     </div>
+    <!-- End page header -->
+
+    <!-- Page nav -->
     <div class="c-page__nav">
         <div class="c-row c-row--nav">
             <div class="o-container c-page__nav-container">
@@ -20,23 +19,19 @@
             </div>
         </div>
     </div>
-    <!-- End page header -->
+    <!-- End page nav -->
+
+    <!-- Page intro -->
     <div class="c-page__intro">
         {% include components.intro.html %}
     </div>
+    <!-- End page intro -->
+
+    <!-- Page main -->
     <div class="c-page__main">
         {{ content }}
     </div>
-
-    <div id="inline" style="display:none;">
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-    </div>
-
-    {% comment %}
-    <!-- Page footer -->
-    {% include components.footer.html %}
-    <!-- End page footer -->
-    {% endcomment %}
+    <!-- End page main -->
 
     <!-- Footer javascript -->
     {% include generic.javascript.html %}

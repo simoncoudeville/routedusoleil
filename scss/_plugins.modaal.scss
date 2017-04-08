@@ -80,7 +80,7 @@ $modaal-grey: palette(color-neutral);
 		border: none;
 		//background: transparent;
 		padding: 0;
-		-webkit-appearance: none;
+		appearance: none;
 	}
 
 	&.modaal-start_none {
@@ -161,6 +161,7 @@ $modaal-grey: palette(color-neutral);
 	opacity: 1;
 	width: 3em;
 	height: 3em;
+	border-radius: 100%;
 	background: rgba(palette(color-neutral,xxx-light), 1);
 	@include modaal-transition(all);
 	&:focus,

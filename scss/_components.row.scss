@@ -14,9 +14,14 @@
     background-color: palette(color-neutral,xxx-light);
 }
 
+//.c-row--beta {
+//    color: palette(color-neutral,xx-light);
+//    background-color: palette(color-neutral,xxx-dark);
+//}
+
 .c-row--beta {
-    color: palette(color-neutral,xx-light);
-    background-color: palette(color-neutral,xxx-dark);
+    color: palette(color-alpha,light);
+    background-color: palette(color-alpha);
 }
 
 .c-row--intro {
@@ -32,16 +37,9 @@
 }
 
 .c-row--main {
-    //margin-top: calc(100vh + 100px);
-
-    //padding: 0;
-
-    @include padding-tb($alpha-leading/2, $alpha-leading/2);
-    @include padding-lr($columns-gutter/2, $columns-gutter/2);
-    //@include padding-tb($alpha-leading,$alpha-leading);
-    //@include padding-lr($columns-gutter,$columns-gutter);
-
-    //padding: 0;
+    //@include padding-tb($alpha-leading/2, $alpha-leading/2);
+    //@include padding-lr($columns-gutter/2, $columns-gutter/2);
+    padding: 0;
 }
 
 .c-row--header {
@@ -59,9 +57,29 @@
 }
 
 .c-row--nav {
-    @include padding-tb($alpha-leading * 7.5,$alpha-leading);
-    //padding-left: 0;
-    //padding-right: 0;
+    @include padding-tb($alpha-leading * 6.5,$alpha-leading);
+    padding-left: 0;
+    padding-right: 0;
     //padding-bottom: 0;
     //@include padding-top($alpha-leading * 7.5);
+}
+
+.c-row--doormat {
+    background-color: palette(color-neutral,xxx-dark);
+    //background-color: palette(color-neutral,xxx-light);
+    //border-bottom: 1px solid white;
+
+    @include mq(bp1) {
+        @include padding-tb($alpha-leading * 4,$alpha-leading * 3);
+        @include padding-lr($columns-gutter * 4,$columns-gutter * 4);
+    }
+}
+
+.c-row--footer {
+    background-color: palette(color-neutral,xxx-dark);
+
+    @include mq(bp5) {
+        @include padding-tb($alpha-leading * 4,$alpha-leading * 3);
+        @include padding-lr($columns-gutter * 4,$columns-gutter * 4);
+    }
 }

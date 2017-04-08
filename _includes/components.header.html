@@ -8,31 +8,25 @@
                 {% include components.logo-mark.html %}
             </div>
             <div class="c-header__item">
-                {% comment %}
+
                 <nav class="c-nav-main">
                     <ul class="o-list c-nav-main__list">
                         <li class="c-nav-main__item"><a class="c-nav-main__link js-nav-trigger" href="#!">Events</a></li>
                         <li class="c-nav-main__item"><a class="c-nav-main__link" href="#!">Residents</a></li>
                         <li class="c-nav-main__item"><a class="c-nav-main__link" href="#!">Login</a></li>
                     </ul>
+                    <button class="c-button-reset c-nav-main__close js-nav-trigger">
+                        {% include atom.symbol.html value="close" class="c-header__symbol c-header__symbol--close" %}
+                    </button>
                 </nav>
-                {% endcomment %}
 
+                {% comment %}
                 <a class="c-header__nav-trigger js-nav-trigger is-active" href="#!">
                     {% include atom.symbol.html value="hamburger" class="c-header__symbol c-header__symbol--hamburger" %}
                     {% include atom.symbol.html value="close" class="c-header__symbol c-header__symbol--close" %}
                 </a>
+                {% endcomment %}
             </div>
-            {% comment %}
-            <p>
-                <a href="" class="c-header__link">projects</a>
-            </p>
-            <p>
-                <a class="c-header__link" href="#!">
-                    {% include atom.symbol.html value="hamburger" class="c-header__symbol" %}
-                </a>
-            </p>
-            {% endcomment %}
         </div>
     </div>
 </div>

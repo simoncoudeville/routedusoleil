@@ -5,11 +5,11 @@
 .c-box {
     position: relative;
     overflow: hidden;
-    @include padding-tb($alpha-leading/2, $alpha-leading/2);
-    @include padding-lr($columns-gutter/2, $columns-gutter/2);
+    //@include padding-tb($alpha-leading/2, $alpha-leading/2);
+    //@include padding-lr($columns-gutter/2, $columns-gutter/2);
 }
 
-.c-box--background:hover {
+.c-box__body-link:hover {
     .c-background-image {
         transform: scale(1.05);
     }
@@ -23,8 +23,12 @@
         overflow: hidden;
 
         .c-box--half & {
-            padding-bottom: calc(50% - .5rem);
-            //padding-bottom: 50%;
+            //padding-bottom: calc(50% - .5rem);
+            padding-bottom: 75%;
+
+            @include mq(bp4) {
+                padding-bottom: 50%;
+            }
         }
 
         .c-box--double & {
@@ -35,6 +39,13 @@
         .c-background-image {
             z-index: 10;
         }
+
+        //.c-box--resident & {
+        //    @include mq(bp2,max) {
+        //        height: auto;
+        //        padding-bottom: 0;
+        //    }
+        //}
     }
 
     .c-box__content {
@@ -54,10 +65,19 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
+        //.c-box--resident & {
+        //    @include mq(bp2,max) {
+        //        position: relative;
+        //        top: auto;
+        //        left: auto;
+        //        transform: translate(0,0);
+        //    }
+        //}
     }
 
     .c-box__content--lg {
-        @include mq(bp3) {
+        @include mq(bp1) {
             @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
             @include padding-tb($alpha-leading * 2,$columns-gutter);
         }
@@ -75,9 +95,31 @@
         }
     }
 
+    .c-box__avatar-holder {
+        @include margin-bottom($alpha-leading/1.5);
+    }
+
     .c-box__title,
     .c-box__paragraph {
         .c-box--background & {
             color: white;
         }
+    }
+
+    .c-box__title--cta {
+        font-family: $beta-font-family;
+        font-weight: normal;
+        letter-spacing: 0.04em;
+        @include margin-bottom($alpha-leading / 4);
+
+        @include mq(bp3) {
+            @include ms4;
+        }
+    }
+
+    .c-box__paragraph {
+        //font-weight: $beta-font-weight;
+        //font-family: $gamma-font-family;
+        //@include ms-2;
+        @include ms-1;
     }

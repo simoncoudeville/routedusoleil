@@ -17,6 +17,9 @@
         left: 0;
         z-index: 30;
         transition: all $animation-duration-alpha $animation-easing-alpha;
+        display: flex;
+        align-items: center;
+        height: 6.5rem;
 
         &:before {
             content: '';
@@ -31,21 +34,22 @@
             box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.125);
         }
 
-        &.is-negative {
+        .has-scrolled & {
+            height: 5rem;
 
             &:before {
                 //height: 100%;
                 transform: translateY(0);
             }
+        }
 
-            .has-visible-nav & {
-                background-color: transparent;
-                box-shadow: none;
+        .has-scrolled.has-visible-nav & {
+            background-color: transparent;
+            box-shadow: none;
 
-                &:before {
-                    //height: 0;
-                    transform: translateY(-100%);
-                }
+            &:before {
+                //height: 0;
+                transform: translateY(-100%);
             }
         }
     }

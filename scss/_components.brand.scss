@@ -21,6 +21,7 @@
     //font-family: $delta-font-family;
     //text-transform: uppercase;
     //font-weight: bold;
+    margin-bottom: 0;
     @include text-dimensions($ms2,1);
 }
 
@@ -33,12 +34,12 @@
         display: inline-flex;
     }
 
-    .is-negative & {
+    .has-scrolled & {
         color: palette(color-neutral,xxx-dark);
+    }
 
-        .has-visible-nav & {
-            color: white;
-        }
+    .has-scrolled.has-visible-nav & {
+        color: white;
     }
 }
 
@@ -71,11 +72,11 @@
         //@include margin-bottom($alpha-leading);
         //@include margin-right($columns-gutter);
 
-        .is-negative & {
+        .has-scrolled & {
             background-image: url('../img/png/logo-black.png');
+        }
 
-            .has-visible-nav & {
-                background-image: url('../img/png/logo-white.png');
-            }
+        .has-scrolled.has-visible-nav & {
+            background-image: url('../img/png/logo-white.png');
         }
     }

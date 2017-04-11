@@ -45,7 +45,7 @@
         &:visited {
             color: white;
 
-            .is-negative & {
+            .has-scrolled &{
                 color: palette(color-neutral,xxx-dark);
 
                 .has-visible-nav & {
@@ -61,12 +61,12 @@
         fill: white;
         transition: all $animation-duration-alpha $animation-easing-alpha;
 
-        .is-negative & {
+        .has-scrolled & {
             fill: palette(color-neutral,xxx-dark);
+        }
 
-            .has-visible-nav & {
-                fill: white;
-            }
+        .has-scrolled.has-visible-nav & {
+            fill: white;
         }
     }
 

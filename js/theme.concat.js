@@ -46,17 +46,23 @@ var chopstick =
 
         $(function() {
         //caches a jQuery object containing the header element
+            var page = $(".js-page")
             var header = $(".js-header");
+            var main = $(".js-main");
             var headerHeight = header.height();
-            var theHeight = $(window).height() - headerHeight - 36;
+            var mainTop = main.offset().top;
+            var theHeight = mainTop - headerHeight;
+            console.log(headerHeight);
+            console.log(theHeight);
+            console.log(mainTop);
 
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
 
                 if (scroll >= theHeight) {
-                    header.addClass("is-negative");
+                    page.addClass("has-scrolled");
                 } else {
-                    header.removeClass("is-negative");
+                    page.removeClass("has-scrolled");
                 }
             });
         });
@@ -134,7 +140,7 @@ chopstick.mobileNav =
 {
     settings:
     {
-        container: $('.js-nav-container'),
+        container: $('.js-page'),
         trigger: $('.js-nav-trigger')
     },
 

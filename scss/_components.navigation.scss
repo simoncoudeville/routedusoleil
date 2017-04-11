@@ -12,7 +12,7 @@
 }
 
 .c-nav-main__list {
-    //margin-bottom: 0;
+    margin-bottom: 0;
     display: flex;
 
     .has-visible-nav & {
@@ -22,24 +22,30 @@
 
 .c-nav-main__item {
     & + & {
-        @include margin-left($columns-gutter*2);
+        @include margin-left($columns-gutter);
+
+        @include mq(bp3) {
+            @include margin-left($columns-gutter*2);
+        }
     }
 }
 
 .c-nav-main__link {
     font-weight: $beta-font-weight;
+    display: block;
+    @include padding-tb(.4,.5);
     @include ms-1;
 
     &,
     &:visited {
         color: palette(color-neutral,xxx-light);
 
-        .is-negative & {
+        .has-scrolled & {
             color: palette(color-neutral,xxx-dark);
+        }
 
-            .has-visible-nav & {
-                color: palette(color-neutral,xxx-light);
-            }
+        .has-scrolled.has-visible-nav & {
+            color: palette(color-neutral,xxx-light);
         }
     }
 
@@ -56,11 +62,16 @@
     //height: 2em;
     //align-items: center;
     //justify-content: center;
-    @include margin-bottom($alpha-leading);
+    //@include margin-bottom($alpha-leading);
+    color: white;
 
     .has-visible-nav & {
         display: flex;
     }
+
+    //.has-scrolled.has-visible-nav & {
+    //    color: white;
+    //}
 }
 
 .c-nav-projects {

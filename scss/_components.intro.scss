@@ -12,26 +12,16 @@
     align-items: center;
     z-index: 10;
     position: relative;
-    @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
+    @include padding-lr($columns-gutter,$columns-gutter);
 
     .c-background-image {
         z-index: 101;
     }
-}
 
-    .c-intro-nav {
-        position: absolute;
-        z-index: 103;
-        color: white;
-        font-family: $beta-font-family;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        @include margin-bottom($alpha-leading*2);
-        @include text-dimensions($ms2,1);
+    @include mq(bp1) {
+        @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
     }
+}
 
     .c-intro__body {
         max-width: 32em;
@@ -44,22 +34,18 @@
         transition: all $animation-duration-beta $animation-easing-alpha;
         transition-delay: $animation-duration-alpha;
 
-        @include mq(bp3) {
-            @include padding-tb($alpha-leading * 6,$alpha-leading * 5);
-        }
-
         .is-selected & {
             opacity: 1;
             transform: translateY(0);
         }
+
+        @include mq(bp3) {
+            @include padding-tb($alpha-leading * 6,$alpha-leading * 5);
+        }
     }
 
     .c-intro__image {
-        max-width: 75%;
-
-        @include mq(bp3) {
-            max-width: 50%;
-        }
+        max-width: 50%;
     }
 
     .c-intro__title {
@@ -82,57 +68,8 @@
     .c-intro__description {
         color: white;
         @include margin-bottom($alpha-leading*1.5);
+
+        @include mq(bp1,max) {
+            @include ms-1;
+        }
     }
-
-    .c-intro__arrow {
-        position: absolute;
-
-    }
-
-//.c-intro-nav {
-//    position: absolute;
-//    right: 0;
-//    bottom: 0;
-//    left: 0;
-//    display: none;
-//}
-//
-//    .c-intro-nav__list {
-//        display: flex;
-//        //justify-content: space-around;
-//        justify-content: space-between;
-//        border-top: 1px solid rgba(white,.25);
-//        margin-bottom: 0;
-//    }
-//
-//    .c-intro-nav__item {
-//        //text-align: center;
-//        //flex: 1;
-//    }
-//
-//    .c-intro-nav__link {
-//        display: block;
-//        @include padding-tb($alpha-leading*2,$alpha-leading*2);
-//
-//        &,
-//        &:hover {
-//            text-decoration: none;
-//        }
-//    }
-//
-//    .c-intro-nav__title,
-//    .c-intro-nav__date {
-//        display: block;
-//    }
-//
-//    .c-intro-nav__title {
-//        font-family: $beta-font-family;
-//        color: white;
-//        @include ms4;
-//    }
-//
-//    .c-intro-nav__date {
-//        font-family: $gamma-font-family;
-//        text-transform: uppercase;
-//        @include ms-2;
-//    }

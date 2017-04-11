@@ -43,6 +43,10 @@
 }
 
 .c-row--header {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    //@include padding-tb($alpha-leading * 2,$alpha-leading * 2);
     //position: fixed;
     //position: absolute;
     //top: 0;
@@ -57,11 +61,15 @@
 }
 
 .c-row--nav {
-    @include padding-tb($alpha-leading * 6.5,$alpha-leading);
     padding-left: 0;
     padding-right: 0;
     //padding-bottom: 0;
     //@include padding-top($alpha-leading * 7.5);
+    @include padding-tb($alpha-leading * 6.5,$alpha-leading);
+
+    .has-scrolled.has-visible-nav & {
+        @include padding-top($alpha-leading * 5);
+    }
 }
 
 .c-row--doormat {

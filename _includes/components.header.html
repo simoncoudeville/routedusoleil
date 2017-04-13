@@ -8,18 +8,33 @@
                 {% include components.logo-mark.html %}
             </div>
             <div class="c-header__item">
-
                 <nav class="c-nav-main">
                     <ul class="o-list c-nav-main__list">
                         <li class="c-nav-main__item"><a class="c-nav-main__link js-nav-trigger" href="#!">Events</a></li>
                         <li class="c-nav-main__item"><a class="c-nav-main__link" href="#!">Residents</a></li>
                         <li class="c-nav-main__item"><a class="c-nav-main__link" href="#!">Login</a></li>
+                        <li class="c-nav-main__item c-nav-main__item--language">
+                            <a class="c-nav-main__link c-nav-main__link--dropdown js-subnav-trigger" href="#!">
+                                English
+                                {% include atom.symbol.html value="caret" class="c-nav-main__symbol c-nav-main__symbol--arrow-down" %}
+                            </a>
+                            <ul class="o-list c-subnav js-subnav">
+                                <li class="c-subnav__item">
+                                    <a href="#!" class="c-subnav__link">Nederlands</a>
+                                </li>
+                                <li class="c-subnav__item is-active">
+                                    <a href="#!" class="c-subnav__link">English</a>
+                                </li>
+                                <li class="c-subnav__item">
+                                    <a href="#!" class="c-subnav__link">Français</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <button class="c-button-reset c-nav-main__close js-nav-trigger">
-                        {% include atom.symbol.html value="close" class="c-header__symbol c-header__symbol--close" %}
+                        {% include atom.symbol.html value="close" class="c-nav-main__symbol c-nav-main__symbol--close" %}
                     </button>
                 </nav>
-
                 {% comment %}
                 <a class="c-header__nav-trigger js-nav-trigger is-active" href="#!">
                     {% include atom.symbol.html value="hamburger" class="c-header__symbol c-header__symbol--hamburger" %}

@@ -4,8 +4,7 @@
 {% else %}
     <h1 class="c-logo c-logo--mark">
 {% endif %}
-    <span class="c-logo__mark"></span>
-    <!-- <span class="c-logo__label">{{ site.title }}</span> -->
+    {% include atom.symbol.html value="logo" class="c-logo__mark" %}
 {% if page.section != 'home' %}
         </a>
     </p>

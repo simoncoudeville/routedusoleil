@@ -8,16 +8,12 @@ var chopstick =
         chopstick.loadObject(chopstick.toggle, 'chopstick.toggle');
 
         $(function() {
-        //caches a jQuery object containing the header element
             var page = $(".js-page")
             var header = $(".js-header");
             var main = $(".js-main");
             var headerHeight = header.height();
             var mainTop = main.offset().top;
             var theHeight = mainTop - headerHeight;
-            console.log(headerHeight);
-            console.log(theHeight);
-            console.log(mainTop);
 
             $(window).scroll(function() {
                 var scroll = $(window).scrollTop();
@@ -31,7 +27,6 @@ var chopstick =
         });
 
         $('.js-wall').masonry({
-            // options...
             itemSelector: '.js-wall-item',
             columnWidth: '.js-wall-sizer',
             percentPosition: true
@@ -42,6 +37,25 @@ var chopstick =
             // cellSelector: '.js-intro-carousel-item',
             // bgLazyLoad: true
             arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
+        });
+
+        $(function() {
+            var subnavTrigger = $('.js-subnav-trigger');
+            var subnav = $('.js-subnav');
+
+            subnavTrigger.click(function() {
+                $(this).parent().toggleClass('has-open-subnav');
+                return false;
+            });
+
+            $('html').click(function(e) {
+                subnavTrigger.parent().removeClass('has-open-subnav');
+                e.stopPropagation();
+            });
+
+            subnav.click(function(e) {
+                e.stopPropagation();
+            });
         });
     },
 

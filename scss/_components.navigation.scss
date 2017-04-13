@@ -21,6 +21,8 @@
 }
 
 .c-nav-main__item {
+    position: relative;
+
     & + & {
         @include margin-left($columns-gutter);
 
@@ -32,8 +34,9 @@
 
 .c-nav-main__link {
     font-weight: $beta-font-weight;
-    display: block;
-    @include padding-tb(.4,.5);
+    display: flex;
+    align-items: center;
+    @include padding-tb(.5,.6);
     @include ms-1;
 
     &,
@@ -58,24 +61,115 @@
 
 .c-nav-main__close {
     display: none;
-    //width: 2em;
-    //height: 2em;
-    //align-items: center;
-    //justify-content: center;
-    //@include margin-bottom($alpha-leading);
     color: white;
 
     .has-visible-nav & {
         display: flex;
     }
-
-    //.has-scrolled.has-visible-nav & {
-    //    color: white;
-    //}
 }
 
+.c-nav-main__symbol {
+    width: 1.5em;
+    height: 1.5em;
+    fill: white;
+    transition: all $animation-duration-alpha $animation-easing-alpha;
+
+    .has-scrolled & {
+        fill: palette(color-neutral,xxx-dark);
+    }
+
+    .has-scrolled.has-visible-nav & {
+        fill: white;
+    }
+}
+
+.c-nav-main__symbol--close {
+    display: none;
+
+    .has-visible-nav & {
+        display: block;
+    }
+}
+
+.c-nav-main__symbol--arrow-down {
+    position: relative;
+    top: 0.1em;
+}
+
+// subnav
+
+.c-subnav {
+    position: absolute;
+    top: 100%;
+    top: calc(100% + 2px);
+    right: 0;
+    background-color: #fff;
+    min-width: 100%;
+    pointer-events: none;
+    transform: translateY(5px) scale(0.95);
+    //transform-origin: 0 100%;
+    opacity: 0;
+    will-change: transform,opacity;
+    transition-property: transform,opacity;
+    transition-duration: $animation-duration-alpha;
+    border-radius: 1px;
+    box-shadow: 0 50px 100px rgba(palette(color-neutral,xxx-dark),.1), 0 5px 15px rgba(palette(color-neutral,xxx-dark),.1);
+    z-index: 1;
+    //@include padding-tb(.75,.75);
+    @include padding-tb(.5,.5);
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: -3px;
+        left: 50%;
+        margin-left: -5px;
+        //right: 7px;
+        transform: rotate(45deg);
+        border-radius: 1px 0 0 0;
+        background: #fff;
+        z-index: 11;
+    }
+
+    .has-open-subnav & {
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+    .c-subnav__item {
+        position: relative;
+        z-index: 12;
+    }
+
+    .c-subnav__link {
+        font-weight: $beta-font-weight;
+        display: block;
+        //text-align: center;
+        @include padding-lr(1,1);
+        @include padding-tb(.25,.25);
+        @include ms-2;
+
+        &,
+        &:visited {
+            color: palette(color-neutral,xxx-dark);
+        }
+
+        &:hover,
+        &:focus {
+            opacity: .5;
+            text-decoration: none;
+        }
+
+        .is-active & {
+            opacity: .5;
+        }
+    }
+
 .c-nav-projects {
-    //border-bottom: 1px solid rgba(white,.1);
     @include padding-bottom($alpha-leading);
 }
 

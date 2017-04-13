@@ -10,7 +10,7 @@
         <div class="c-box__content c-box__content--lg">
             {% if include.video %}
                 <div class="c-box__play">
-                    <svg class="c-symbol c-box__play-symbol"><use xlink:href="#c-symbol---play_circle_filled"></use></svg>
+                    {% include atom.symbol.html value="play_circle" class="c-box__play-symbol" %}
                 </div>
             {% endif %}
             {% if include.title %}

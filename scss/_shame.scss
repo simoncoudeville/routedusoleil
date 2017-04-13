@@ -4,6 +4,12 @@
     Hacks and quick fixes
 */
 
+html  {
+    @include mq(bp7) {
+        font-size: $alpha-font-size/16*125%;
+    }
+}
+
 .c-row {
     .o-container {
         position: relative;

@@ -2,6 +2,9 @@
     {% if include.video %}
         <a href="https://www.youtube.com/embed/ShkGF_X-Uaw?autoplay=1" data-modaal-type="video" data-modaal-animation="fade" class="c-box__body-link modaal">
     {% endif %}
+    {% if include.article %}
+        <a href="article.html" data-modaal-type="ajax" data-modaal-animation="fade" class="c-box__body-link modaal">
+    {% endif %}
     {% if include.link %}
         <a href="{{ include.link }}" class="c-box__body-link">
     {% endif %}
@@ -32,10 +35,13 @@
             {% endif %}
         </div>
     </div>
-    {% if include.link %}
+    {% if include.video %}
         </a>
     {% endif %}
-    {% if include.video %}
+    {% if include.article %}
+        </a>
+    {% endif %}
+    {% if include.link %}
         </a>
     {% endif %}
 </div>

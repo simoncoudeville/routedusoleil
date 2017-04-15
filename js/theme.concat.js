@@ -45,7 +45,7 @@ var chopstick =
         chopstick.loadObject(chopstick.toggle, 'chopstick.toggle');
 
         $(function() {
-            var page = $(".js-page")
+            var page = $(".js-page");
             var header = $(".js-header");
             var main = $(".js-main");
             var headerHeight = header.height();
@@ -63,16 +63,32 @@ var chopstick =
             });
         });
 
-        $('.js-wall').masonry({
+        var wall = $('.js-wall').masonry({
             itemSelector: '.js-wall-item',
             columnWidth: '.js-wall-sizer',
-            percentPosition: true
+            percentPosition: true,
+            hiddenStyle: {
+                transform: 'translateY(100px)',
+                opacity: 0
+            },
+            visibleStyle: {
+                transform: 'translateY(0px)',
+                opacity: 1
+            }
+        });
+
+        $('.js-append-button').on( 'click', function() {
+            jQuery.get('boxes.html', function( data ) {
+                // Make jQuery object from HTML string
+                var moreItems = jQuery( data ).filter('.js-wall-item');
+                // Append new blocks
+                jQuery(wall).append( moreItems );
+                // Have Masonry position new blocks
+                jQuery(wall).masonry( 'appended', moreItems );
+            });
         });
 
         $('.js-intro-carousel').flickity({
-            // contain: true,
-            // cellSelector: '.js-intro-carousel-item',
-            // bgLazyLoad: true
             arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
         });
 

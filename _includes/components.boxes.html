@@ -32,15 +32,8 @@
             {% include box.resident.html avatar="resident-1.jpg" name="Pieter" quote="Lorem ipsum dolor sit amet consectetur adipisicing elit aliquam blanditiis" %}
         </article>
     </div>
-
-        {% comment %}
-        <button class="c-button c-button--block c-button--loadmore c-button--lg">
-            Load more
-        </button>
-        {% endcomment %}
-        <button class="c-button c-button--alpha c-button--shadow c-button--effect-grow c-wall__loadmore-button">
-            <span class="c-wall__loadmore-label">Load more</span>
-            {% include atom.symbol.html value="add" class="c-wall__loadmore-symbol" %}
-        </button>
-
+    <button class="c-button c-button--alpha c-button--shadow c-button--effect-grow c-wall__loadmore-button js-append-button">
+        <span class="c-wall__loadmore-label">Load more</span>
+        {% include atom.symbol.html value="add" class="c-wall__loadmore-symbol" %}
+    </button>
 </div>

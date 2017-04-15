@@ -66,14 +66,31 @@
     }
 
     .c-box__play {
-        color: palette(color-alpha);
         color: palette(color-neutral,xxx-light);
+        background-color: palette(color-alpha);
+        //background-color: palette(color-neutral,xxx-light);
+        //color: palette(color-alpha);
         z-index: 30;
+        width: 3em;
+        height: 3em;
+        margin: 0 auto;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 25px rgba(palette(color-neutral,xxx-dark),.125);
+        transition: all $animation-duration-alpha $animation-easing-alpha;
         @include margin-bottom($alpha-leading/2);
 
         .c-symbol {
-            width: 3rem;
-            height: 3rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .c-box__body-link:hover & {
+            transform: scale(1.05);
+            background-color: palette(color-neutral,xxx-light);
+            color: palette(color-alpha);
         }
     }
 

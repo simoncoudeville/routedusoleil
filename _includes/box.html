@@ -1,12 +1,12 @@
 <div class="c-box{% if include.class %} {{ include.class }}{% endif %}">
     {% if include.video %}
-        <a href="https://www.youtube.com/embed/ShkGF_X-Uaw?autoplay=1" data-modaal-type="video" data-modaal-animation="fade" class="c-box__body-link modaal">
+        <a href="https://www.youtube.com/embed/ShkGF_X-Uaw?autoplay=1" class="c-box__body-link js-modaal-video">
     {% endif %}
     {% if include.article %}
-        <a href="article.html" data-modaal-type="ajax" data-modaal-animation="fade" class="c-box__body-link modaal">
+        <a href="article.html" class="c-box__body-link js-modaal-ajax">
     {% endif %}
     {% if include.link %}
-        <a href="{{ include.link }}" class="c-box__body-link">
+        <a href="{{ include.link }}" target="_blank" class="c-box__body-link">
     {% endif %}
     <div class="c-box__body u-bgcolor-neutral-xxx-dark">
         <div class="c-background-image" style="background-image: url('img/jpg/{{ include.bg }}');"></div>

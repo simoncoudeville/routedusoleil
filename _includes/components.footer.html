@@ -16,23 +16,7 @@
                 <h3 class="c-doormat-title">
                     Follow us
                 </h3>
-                <ul class="o-list c-nav-social">
-                    <li class="c-nav-social__item">
-                        <a href="#!" class="c-nav-social__link">
-                            {% include atom.symbol.html value="instagram" class="c-nav-social__symbol" %}
-                        </a>
-                    </li>
-                    <li class="c-nav-social__item">
-                        <a href="#!" class="c-nav-social__link">
-                            {% include atom.symbol.html value="facebook" class="c-nav-social__symbol" %}
-                        </a>
-                    </li>
-                    <li class="c-nav-social__item">
-                        <a href="#!" class="c-nav-social__link">
-                            {% include atom.symbol.html value="snapchat" class="c-nav-social__symbol" %}
-                        </a>
-                    </li>
-                </ul>
+                {% include components.social-nav.html %}
             </div>
             <div class="c-doormat__item">
                 <p class="c-doormat__copy">&copy; {{ 'now' | date: "%Y" }} Route du Soleil</p>

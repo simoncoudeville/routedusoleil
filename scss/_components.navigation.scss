@@ -297,13 +297,25 @@
     }
 
     .c-nav-social__link {
+        display: inline-flex;
+        align-items: center;
+
         &,
         &:visited {
             color: white;
+        }
+
+        .c-nav-social--small & {
+            height: 1.5rem;
         }
     }
 
     .c-nav-social__symbol {
         width: 1.5rem;
         height: 1.5rem;
+
+        .c-nav-social--small & {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
     }

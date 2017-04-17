@@ -20,8 +20,9 @@
 //}
 
 .c-row--beta {
-    color: palette(color-alpha,light);
+    color: palette(color-neutral,xxx-light);
     background-color: palette(color-alpha);
+    background-color: palette(color-neutral);
 }
 
 .c-row--intro {
@@ -36,7 +37,7 @@
     //background-color: palette(color-neutral,xxx-dark);
 }
 
-.c-row--main {
+.c-row--wall {
     //@include padding-tb($alpha-leading/2, $alpha-leading/2);
     //@include padding-lr($columns-gutter/2, $columns-gutter/2);
     padding: 0;

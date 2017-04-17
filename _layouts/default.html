@@ -22,8 +22,20 @@
     <!-- End page nav -->
 
     <!-- Page intro -->
-    <div class="c-page__intro scrollme animateme" data-when="exit" data-from="0" data-to="1" data-translatey="-75" data-opacity="1" data-easing="linear">
+    <div class="c-page__intro scrollme animateme" data-when="exit" data-from="0" data-to="1" data-translatey="-150" data-opacity="1" data-easing="linear">
         {% include components.intro.html %}
+        <div class="c-intro-meta">
+            <div class="c-row c-row--meta">
+                <p class="c-row-meta__tagline">
+                    It's the journey, not the destination
+                </p>
+            </div>
+        </div>
+        <div class="c-intro-social">
+            <div class="c-row c-row--meta">
+                {% include components.social-nav.html class="c-nav-social--small" %}
+            </div>
+        </div>
     </div>
     <!-- End page intro -->
 

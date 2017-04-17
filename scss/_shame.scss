@@ -115,3 +115,11 @@ html  {
         @include ms2;
     }
 }
+
+.c-language-label-short {
+    display: block;
+}
+
+.c-language-label {
+    display: none;
+}

@@ -4,7 +4,19 @@ title: Homepage
 section: home
 ---
 
-<div class="c-row c-row--alpha c-row--main">
+{% comment %}
+<div class="c-row c-row--alpha">
+    <div class="o-container">
+        <div class="o-flex o-flex--wrap o-flex--align-center o-flex--justify-space-between">
+            <h2 class="u-ms1">
+                It's the journey, not the destination
+            </h2>
+            {% include components.social-nav.html %}
+        </div>
+    </div>
+</div>
+{% endcomment %}
+<div class="c-row c-row--alpha c-row--wall">
     <div class="o-container">
         {% include components.boxes.html %}
     </div>

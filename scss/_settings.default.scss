@@ -45,7 +45,7 @@
 $color-alpha                        : #f1c62c !default; // ff5a5d
 $color-beta                         : #03BBBB !default; // 03BBBB
 
-$color-neutral                      : hsl(hue($color-alpha),10,50) !default; //#7F7F77
+$color-neutral                      : hsl(hue($color-alpha),5,50) !default; //#7F7F77
 
 $color-error                        : #FF4136 !default;
 $color-success                      : #2ECC40 !default;

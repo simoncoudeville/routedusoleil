@@ -38,9 +38,10 @@
 }
 
 .c-row--wall {
-    //@include padding-tb($alpha-leading/2, $alpha-leading/2);
-    //@include padding-lr($columns-gutter/2, $columns-gutter/2);
     padding: 0;
+    background-image: url('../img/svg/pattern.svg');
+    background-repeat: repeat;
+    background-size: 125px 125px;
 }
 
 .c-row--header {

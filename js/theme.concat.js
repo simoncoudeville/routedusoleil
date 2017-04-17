@@ -40,9 +40,10 @@ var chopstick =
     // init, something like a constructor
     init: function()
     {
-        chopstick.loadObject(chopstick.mobileNav, 'chopstick.mobileNav');
-        chopstick.loadObject(chopstick.hide, 'chopstick.hide');
-        chopstick.loadObject(chopstick.toggle, 'chopstick.toggle');
+        chopstick.loadObject(chopstick.eventNav, 'chopstick.eventNav');
+        chopstick.loadObject(chopstick.subNav, 'chopstick.subNav');
+        chopstick.loadObject(chopstick.modaals, 'chopstick.modaals');
+        chopstick.loadObject(chopstick.masonry, 'chopstick.masonry');
 
         $(function() {
             var page = $(".js-page");
@@ -63,53 +64,12 @@ var chopstick =
             });
         });
 
-        var wall = $('.js-wall').masonry({
-            itemSelector: '.js-wall-item',
-            columnWidth: '.js-wall-sizer',
-            percentPosition: true,
-            hiddenStyle: {
-                transform: 'translateY(100px)',
-                opacity: 0
-            },
-            visibleStyle: {
-                transform: 'translateY(0px)',
-                opacity: 1
-            }
-        });
-
-        $('.js-append-button').on( 'click', function() {
-            jQuery.get('boxes.html', function( data ) {
-                // Make jQuery object from HTML string
-                var moreItems = jQuery( data ).filter('.js-wall-item');
-                // Append new blocks
-                jQuery(wall).append( moreItems );
-                // Have Masonry position new blocks
-                jQuery(wall).masonry( 'appended', moreItems );
-            });
-        });
+        // initialize flickity
 
         $('.js-intro-carousel').flickity({
             arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
         });
 
-        $(function() {
-            var subnavTrigger = $('.js-subnav-trigger');
-            var subnav = $('.js-subnav');
-
-            subnavTrigger.click(function() {
-                $(this).parent().toggleClass('has-open-subnav');
-                return false;
-            });
-
-            $('html').click(function(e) {
-                subnavTrigger.parent().removeClass('has-open-subnav');
-                e.stopPropagation();
-            });
-
-            subnav.click(function(e) {
-                e.stopPropagation();
-            });
-        });
     },
 
     /**
@@ -141,8 +101,8 @@ var chopstick =
     }
 };
 
-var mobileNavSettings
-chopstick.mobileNav =
+var eventNavSettings;
+chopstick.eventNav =
 {
     settings:
     {
@@ -153,60 +113,117 @@ chopstick.mobileNav =
     init: function()
     {
         // Initialize mobile nav settings
-        mobileNavSettings = chopstick.mobileNav.settings;
+        eventNavSettings = chopstick.eventNav.settings;
         // Bind toggle events
-        chopstick.mobileNav.bindUIEvents();
+        chopstick.eventNav.bindUIEvents();
     },
 
     bindUIEvents: function()
     {
-        mobileNavSettings.trigger.on('click', function() {
-            chopstick.mobileNav.toggleNavigation();
+        eventNavSettings.trigger.on('click', function() {
+            chopstick.eventNav.toggleNavigation();
         });
     },
 
     // build mobile nav
     toggleNavigation: function()
     {
-        mobileNavSettings.container.toggleClass('has-visible-nav');
-        mobileNavSettings.trigger.toggleClass('is-active');
+        eventNavSettings.container.toggleClass('has-visible-nav');
+        eventNavSettings.trigger.toggleClass('is-active');
     }
 };
 
-var toggleSettings
-chopstick.toggle =
+var masonrySettings;
+chopstick.masonry =
 {
     settings:
     {
-        showHideToggle: $('.js-show-hide')
+        wall: $('.js-wall'),
+        appendTrigger: $('.js-append-button')
     },
 
     init: function()
     {
-        // Initialize toggle settings
-        toggleSettings = chopstick.toggle.settings;
-        // Bind toggle events
-        chopstick.toggle.bindUIEvents();
+        masonrySettings = chopstick.masonry.settings;
+        chopstick.masonry.buildTheWall();
+        chopstick.masonry.appendToTheWall();
     },
 
-    bindUIEvents: function()
+    buildTheWall: function()
     {
-        // Bind show hide event
-        toggleSettings.showHideToggle.on('touchstart click', function(e){
-            var trigger = $(this);
-            // Check if action needs to be prevented
-            if (trigger.data("action") == "none") {
-                e.preventDefault();
+        masonrySettings.wall.masonry({
+            itemSelector: '.js-wall-item',
+            columnWidth: '.js-wall-sizer',
+            percentPosition: true,
+            hiddenStyle: {
+                transform: 'translateY(100px)',
+                opacity: 0
+            },
+            visibleStyle: {
+                transform: 'translateY(0px)',
+                opacity: 1
             }
-            chopstick.toggle.showHide(trigger.data("target-selector"));
-            trigger.toggleClass('is-toggled');
         });
     },
 
-    showHide: function(targets)
+    appendToTheWall: function()
     {
-        //  Toggle the 'is-hidden' class
-        $(targets).toggleClass('is-hidden');
+        masonrySettings.appendTrigger.on( 'click', function() {
+            jQuery.get('boxes.html', function( data ) {
+                // Make jQuery object from HTML string
+                var moreItems = jQuery( data ).filter('.js-wall-item');
+                // Append new blocks
+                jQuery(masonrySettings.wall).append( moreItems );
+                // Have Masonry position new blocks
+                jQuery(masonrySettings.wall).masonry( 'appended', moreItems );
+                // make sure modaal works after items are loaded
+                moreItems.imagesLoaded().progress( function() {
+                    chopstick.loadObject(chopstick.modaals, 'chopstick.modaals');
+                });
+            });
+        });
+    }
+};
+
+chopstick.modaals =
+{
+    init: function()
+    {
+        $('.js-modaal-ajax').modaal({
+            type: 'ajax'
+        });
+        $('.js-modaal-video').modaal({
+            type: 'video'
+        });
+    }
+};
+
+var subNavSettings;
+chopstick.subNav =
+{
+    settings:
+    {
+        subNavTrigger: $('.js-subnav-trigger'),
+        subNav: $('.js-subnav')
+    },
+
+    init: function()
+    {
+        subNavSettings = chopstick.subNav.settings;
+
+        subNavSettings.subNavTrigger.click(function() {
+            $(this).parent().toggleClass('has-open-subnav');
+            return false;
+        });
+
+        $('html').click(function(e) {
+            subNavSettings.subNavTrigger.parent().removeClass('has-open-subnav');
+            e.stopPropagation();
+        });
+
+        subNavSettings.subNav.click(function(e) {
+            e.stopPropagation();
+        });
     }
 };
 

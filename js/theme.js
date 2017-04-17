@@ -3,9 +3,10 @@ var chopstick =
     // init, something like a constructor
     init: function()
     {
-        chopstick.loadObject(chopstick.mobileNav, 'chopstick.mobileNav');
-        chopstick.loadObject(chopstick.hide, 'chopstick.hide');
-        chopstick.loadObject(chopstick.toggle, 'chopstick.toggle');
+        chopstick.loadObject(chopstick.eventNav, 'chopstick.eventNav');
+        chopstick.loadObject(chopstick.subNav, 'chopstick.subNav');
+        chopstick.loadObject(chopstick.modaals, 'chopstick.modaals');
+        chopstick.loadObject(chopstick.masonry, 'chopstick.masonry');
 
         $(function() {
             var page = $(".js-page");
@@ -26,53 +27,12 @@ var chopstick =
             });
         });
 
-        var wall = $('.js-wall').masonry({
-            itemSelector: '.js-wall-item',
-            columnWidth: '.js-wall-sizer',
-            percentPosition: true,
-            hiddenStyle: {
-                transform: 'translateY(100px)',
-                opacity: 0
-            },
-            visibleStyle: {
-                transform: 'translateY(0px)',
-                opacity: 1
-            }
-        });
-
-        $('.js-append-button').on( 'click', function() {
-            jQuery.get('boxes.html', function( data ) {
-                // Make jQuery object from HTML string
-                var moreItems = jQuery( data ).filter('.js-wall-item');
-                // Append new blocks
-                jQuery(wall).append( moreItems );
-                // Have Masonry position new blocks
-                jQuery(wall).masonry( 'appended', moreItems );
-            });
-        });
+        // initialize flickity
 
         $('.js-intro-carousel').flickity({
             arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
         });
 
-        $(function() {
-            var subnavTrigger = $('.js-subnav-trigger');
-            var subnav = $('.js-subnav');
-
-            subnavTrigger.click(function() {
-                $(this).parent().toggleClass('has-open-subnav');
-                return false;
-            });
-
-            $('html').click(function(e) {
-                subnavTrigger.parent().removeClass('has-open-subnav');
-                e.stopPropagation();
-            });
-
-            subnav.click(function(e) {
-                e.stopPropagation();
-            });
-        });
     },
 
     /**

@@ -122,4 +122,13 @@ html  {
 
 .c-language-label {
     display: none;
+    @include mq(bp3) {
+        display: block;
+    }
+}
+
+.c-language-label-short {
+    @include mq(bp3) {
+        display: none;
+    }
 }

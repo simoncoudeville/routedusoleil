@@ -77,12 +77,20 @@
     position: absolute;
     bottom: 0;
     left: 0;
+
+    @include mq(bp3,max) {
+        display: none;
+    }
 }
 
 .c-intro-social {
     position: absolute;
     bottom: 0;
     right: 0;
+
+    @include mq(bp3,max) {
+        display: none;
+    }
 }
 
     .c-row-meta__tagline {

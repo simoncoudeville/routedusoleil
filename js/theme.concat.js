@@ -45,6 +45,7 @@ var chopstick =
         chopstick.loadObject(chopstick.modaals, 'chopstick.modaals');
         chopstick.loadObject(chopstick.masonry, 'chopstick.masonry');
 
+        // header animation
         $(function() {
             var page = $(".js-page");
             var header = $(".js-header");

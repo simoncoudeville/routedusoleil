@@ -13,7 +13,7 @@
 
 .c-type-date {
     //font-family: $delta-font-family;
-    font-family: $gamma-font-family;
+    //font-family: $gamma-font-family;
     //font-family: $beta-font-family;
     text-transform: uppercase;
     //letter-spacing: 0.04em;
@@ -24,4 +24,11 @@
 .c-type-quote {
     color: palette(color-neutral);
     //font-family: $gamma-font-family;
+}
+
+.c-type-main-title {
+    font-family: $beta-font-family;
+    font-weight: normal;
+    letter-spacing: .04em;
+    text-align: center;
 }

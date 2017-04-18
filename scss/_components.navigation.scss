@@ -247,9 +247,15 @@
         }
     }
 
+    .c-nav-projects__status,
+    .c-nav-projects__date {
+        display: inline-block;
+        @include margin-lr($columns-gutter/2);
+    }
+
     .c-nav-projects__status {
         color: palette(color-neutral);
-        font-family: $gamma-font-family;
+        //font-family: $gamma-font-family;
         @include ms-1;
     }
 
@@ -263,8 +269,8 @@
 
     .c-nav-projects__date {
         color: palette(color-neutral);
-        display: block;
-        @include margin-bottom($alpha-leading/4);
+        //display: block;
+        //@include margin-bottom($alpha-leading/4);
     }
 
 //contact

@@ -38,6 +38,9 @@
 }
 
 .c-row--wall {
+    //padding-right: 0;
+    //padding-bottom: 0;
+    //padding-left: 0;
     padding: 0;
     background-image: url('../img/svg/pattern.svg');
     background-repeat: repeat;
@@ -69,9 +72,9 @@
     //@include padding-top($alpha-leading * 7.5);
     @include padding-tb($alpha-leading * 6.5,$alpha-leading);
 
-    .has-scrolled.has-visible-nav & {
-        @include padding-top($alpha-leading * 5);
-    }
+    //.has-scrolled.has-visible-nav & {
+    //    @include padding-top($alpha-leading * 5);
+    //}
 }
 
 .c-row--doormat {

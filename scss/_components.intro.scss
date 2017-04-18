@@ -4,7 +4,7 @@
 
 .c-intro {
     background-color: palette(color-neutral,xxx-dark);
-    min-height: calc(100vh - 4rem);
+    min-height: calc(100vh - 2rem);
     //min-height: 100vh;
     width: 100%;
     display: flex;
@@ -19,6 +19,10 @@
 
     @include mq(bp1) {
         @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
+    }
+
+    @include mq(bp5) {
+        min-height: 70vh;
     }
 }
 

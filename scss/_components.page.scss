@@ -35,7 +35,8 @@
         }
 
         .has-scrolled & {
-            height: 5rem;
+            //height: 5rem;
+            height: 2.5rem;
 
             &:before {
                 //height: 100%;
@@ -46,6 +47,7 @@
         .has-scrolled.has-visible-nav & {
             background-color: transparent;
             box-shadow: none;
+            height: 6.5rem;
 
             &:before {
                 //height: 0;
@@ -106,7 +108,7 @@
         box-shadow: 0 0 100px rgba(palette(color-neutral,xxx-dark),.25);
 
         @include mq(bp5) {
-            margin-top: calc(100vh - 4rem);
-            //margin-top: 100vh;
+            //margin-top: calc(100vh - 2rem);
+            margin-top: 70vh;
         }
     }

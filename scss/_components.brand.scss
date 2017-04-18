@@ -73,11 +73,13 @@
 
         .has-scrolled & {
             //background-image: url('../img/png/logo-black.png');
-            color: palette(color-neutral,xxx-dark)
+            //color: palette(color-neutral,xxx-dark)
+            opacity: 0;
         }
 
         .has-scrolled.has-visible-nav & {
             //background-image: url('../img/png/logo-white.png');
             color: white;
+            opacity: 1;
         }
     }

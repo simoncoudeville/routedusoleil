@@ -314,6 +314,10 @@
         .c-nav-social--small & {
             height: 1.5rem;
         }
+
+        .c-nav-social--negative & {
+            color: palette(color-neutral,x-dark);
+        }
     }
 
     .c-nav-social__symbol {

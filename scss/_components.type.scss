@@ -31,4 +31,6 @@
     font-weight: normal;
     letter-spacing: .04em;
     text-align: center;
+    color: palette(color-neutral,xxx-dark);
+    @include ms2;
 }

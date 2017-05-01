@@ -1,5 +1,7 @@
-Chopstick Boilerplate
+Route Du Soleil homepage
 =====================
+
+## Made with Chopstick Boilerplate
 
 By [these people](https://github.com/getchopstick/chopstick-boilerplate/graphs/contributors)
 

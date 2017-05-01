@@ -31,10 +31,10 @@ module.exports = {
 
     js: {
         src : [  // source js file
-          path + 'js/modaal/modaal.min.js',
-          path + 'js/masonry-layout/masonry.pkgd.min.js',
-          path + 'js/scrollme/jquery.scrollme.min.js',
-          path + 'js/flickity/flickity.pkgd.min.js',
+          path + 'js/_modaal/modaal.min.js',
+          path + 'js/_masonry-layout/masonry.pkgd.min.js',
+          path + 'js/_scrollme/jquery.scrollme.min.js',
+          path + 'js/_flickity/flickity.pkgd.min.js',
           path + 'js/theme.js',
           path + 'js/_components/*.js',
           path + 'js/loader.js'

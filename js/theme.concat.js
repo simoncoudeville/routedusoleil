@@ -42,36 +42,10 @@ var chopstick =
     {
         chopstick.loadObject(chopstick.eventNav, 'chopstick.eventNav');
         chopstick.loadObject(chopstick.subNav, 'chopstick.subNav');
+        chopstick.loadObject(chopstick.headerScroll, 'chopstick.headerScroll');
         chopstick.loadObject(chopstick.modaals, 'chopstick.modaals');
         chopstick.loadObject(chopstick.masonry, 'chopstick.masonry');
-
-        // header animation
-        $(function() {
-            var page = $(".js-page");
-            var header = $(".js-header");
-            var main = $(".js-main");
-            var headerHeight = header.height();
-            var mainTop = main.offset().top;
-            var theHeight = mainTop - headerHeight;
-
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-
-                if (scroll >= theHeight) {
-                    page.addClass("has-scrolled");
-                } else {
-                    page.removeClass("has-scrolled");
-                }
-            });
-        });
-
-        // initialize flickity
-
-        $('.js-intro-carousel').flickity({
-            autoPlay: true,
-            arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
-        });
-
+        chopstick.loadObject(chopstick.flickity, 'chopstick.flickity');
     },
 
     /**
@@ -132,6 +106,40 @@ chopstick.eventNav =
     {
         eventNavSettings.container.toggleClass('has-visible-nav');
         eventNavSettings.trigger.toggleClass('is-active');
+    }
+};
+
+chopstick.flickity =
+{
+    init: function()
+    {
+        $('.js-intro-carousel').flickity({
+            autoPlay: true,
+            arrowShape: 'M83,45.9v8.1H32.8l23,23.2L50,83L17,50l33-33l5.8,5.8l-23,23.2H83z'
+        });
+    }
+};
+
+chopstick.headerScroll =
+{
+    init: function()
+    {
+        var page = $(".js-page");
+        var header = $(".js-header");
+        var main = $(".js-main");
+        var headerHeight = header.height();
+        var mainTop = main.offset().top;
+        var theHeight = mainTop - headerHeight;
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= theHeight) {
+                page.addClass("has-scrolled");
+            } else {
+                page.removeClass("has-scrolled");
+            }
+        });
     }
 };
 
